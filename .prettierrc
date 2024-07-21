@@ -2,5 +2,6 @@
   "tabWidth": 2,
   "useTabs": false,
   "printWidth": 300,
-  "singleQuote": false
+  "singleQuote": false,
+  "html.format.wrapAttributes": "force-aligned"
 }
