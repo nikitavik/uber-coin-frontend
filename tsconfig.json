@@ -114,5 +114,4 @@
     "skipLibCheck": true,                                /* Skip type checking all .d.ts files. */
   },
   "include": ["src"],                                   /* Specifies an array of filenames or patterns to include in the program. These filenames are resolved relative to the directory containing the tsconfig.json file.*/
-  "references": [{"path": "./tsconfig.node.json"}],     /* Project references are a new feature in TypeScript 3.0 that allow you to structure your TypeScript programs into smaller pieces.  */
 }
