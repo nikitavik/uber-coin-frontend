@@ -5,8 +5,8 @@ import '../../../global.scss';
 export const App: FC = () => {
     return (
         <>
-            <div className={styles.root}>App</div>;
-            <Button text={'Push me'} />
+            <div className={styles.root}>App</div>
+            <Button text={'Uber'} />
         </>
     );
 };
