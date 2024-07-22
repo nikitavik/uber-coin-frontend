@@ -6,7 +6,12 @@ export const App: FC = () => {
     return (
         <>
             <div className={styles.root}>App</div>
-            <Button text={'Uber'} onClick={() => alert('Click')} />
+            <Button text={'Uber'} onClick={() => alert('Click')} scheme="light" variant="small" />
+            <Button text={'Uber'} onClick={() => alert('Click')} scheme="light" variant="regular" />
+            <Button text={'Uber'} onClick={() => alert('Click')} scheme="light" variant="large" />
+            <Button text={'Uber'} onClick={() => alert('Click')} scheme="dark" variant="small" />
+            <Button text={'Uber'} onClick={() => alert('Click')} scheme="dark" variant="regular" />
+            <Button text={'Uber'} onClick={() => alert('Click')} scheme="dark" variant="large" />
         </>
     );
 };
