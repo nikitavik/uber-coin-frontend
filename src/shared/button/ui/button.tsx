@@ -4,8 +4,12 @@ import styles from './button.module.scss';
 
 type ButtonProps = {
     text: string;
-} & HTMLProps<HTMLButtonElement>;
+} & React.ComponentPropsWithoutRef<'button'>;
 
-export const Button: FC<ButtonProps> = ({ text }) => {
-    return <ButtonHeadless className={styles.button}>{text}</ButtonHeadless>;
+export const Button: FC<ButtonProps> = ({ text, ...props }) => {
+    return (
+        <ButtonHeadless {...props} className={styles.button}>
+            {text}
+        </ButtonHeadless>
+    );
 };

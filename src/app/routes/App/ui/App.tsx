@@ -6,7 +6,7 @@ export const App: FC = () => {
     return (
         <>
             <div className={styles.root}>App</div>
-            <Button text={'Uber'} />
+            <Button text={'Uber'} onClick={() => alert('Click')} />
         </>
     );
 };
