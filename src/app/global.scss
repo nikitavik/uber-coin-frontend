@@ -1,0 +1,30 @@
+:root {
+    --background-color-base: #fff;
+    --background-color-invert: #000;
+    --color-base: #000;
+    --color-700: #222;
+    --color-600: #21201f;
+    --color-500: #42413e;
+    --color-450: #5a5a5a;
+    --color-400: #75736f;
+    --color-300: #9e9b98;
+    --color-275: #999;
+    --color-250: #c4c2be;
+    --color-200: #e0deda;
+    --color-150: #edece8;
+    --color-125: #f1f0ed;
+    --color-invert: #fff;
+}
+
+@font-face {
+    font-family: UberMove;
+    font-style: normal;
+    font-weight: normal;
+    src: url("./assets/fonts/uber/UberMove-Regular.woff") format("woff"), url("./assets/fonts/uber/UberMoveTextRegular.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: UberMove, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
