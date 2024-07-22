@@ -20,11 +20,13 @@
     font-family: UberMove;
     font-style: normal;
     font-weight: normal;
-    src: url("./assets/fonts/uber/UberMove-Regular.woff") format("woff"), url("./assets/fonts/uber/UberMoveTextRegular.otf") format("opentype");
+    src:
+        url('./assets/fonts/uber/UberMove-Regular.woff') format('woff'),
+        url('./assets/fonts/uber/UberMoveTextRegular.otf') format('opentype');
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: UberMove, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: UberMove, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
