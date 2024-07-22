@@ -35,7 +35,12 @@ module.exports = defineConfig({
         'import/no-default-export': 'error',
         // eslint-plugin-prettier by default looks into .prettierrc and "merge" rules with eslint
         // however we must explicitly set level of warning
-        'prettier/prettier': 'error',
+        'prettier/prettier': [
+            'error',
+            {
+                endOfLine: 'auto',
+            },
+        ],
         // we want namespace
         '@typescript-eslint/no-namespace': 'off',
         // we want to throw new Error
