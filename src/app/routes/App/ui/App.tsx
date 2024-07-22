@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-
+import { FC } from 'react';
 import styles from './App.module.scss';
 
 export const App: FC = () => {
