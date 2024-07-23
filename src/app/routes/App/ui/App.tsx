@@ -7,50 +7,13 @@ export const App: FC = () => {
         <>
             <div className={styles.root}>App</div>
             <div className={styles.container}>
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="light"
-                    variant="small"
-                />
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="light"
-                    variant="regular"
-                />
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="light"
-                    variant="large"
-                />
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="dark"
-                    variant="small"
-                />
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="dark"
-                    variant="regular"
-                />
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="dark"
-                    variant="small"
-                    isLoad
-                />
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="dark"
-                    variant="regular"
-                    isLoad
-                />
+                <Button text={'Uber'} scheme="light" variant="small" />
+                <Button text={'Uber'} scheme="light" variant="regular" />
+                <Button text={'Uber'} scheme="light" variant="large" />
+                <Button text={'Uber'} scheme="dark" variant="small" />
+                <Button text={'Uber'} scheme="dark" variant="regular" />
+                <Button text={'Uber'} scheme="dark" variant="small" isLoad />
+                <Button text={'Uber'} scheme="dark" variant="regular" isLoad />
                 <Button
                     text={'Uber'}
                     onClick={() => alert('Click')}
@@ -58,27 +21,9 @@ export const App: FC = () => {
                     variant="large"
                     isLoad
                 />
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="light"
-                    variant="small"
-                    isLoad
-                />
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="light"
-                    variant="regular"
-                    isLoad
-                />
-                <Button
-                    text={'Uber'}
-                    onClick={() => alert('Click')}
-                    scheme="light"
-                    variant="large"
-                    isLoad
-                />
+                <Button text={'Uber'} scheme="light" variant="small" isLoad />
+                <Button text={'Uber'} scheme="light" variant="regular" isLoad />
+                <Button text={'Uber'} scheme="light" variant="large" isLoad />
             </div>
         </>
     );
