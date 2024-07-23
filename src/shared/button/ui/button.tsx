@@ -5,17 +5,23 @@ import styles from './button.module.scss';
 
 type ButtonProps = {
     text: string;
+    isLoad?: boolean | undefined;
     scheme: 'light' | 'dark';
     variant: 'small' | 'regular' | 'large';
 } & ComponentPropsWithoutRef<'button'>;
 
-export const Button: FC<ButtonProps> = ({ text, scheme, variant, ...props }) => {
+export const Button: FC<ButtonProps> = ({ text, scheme, variant, isLoad, ...props }) => {
     return (
         <ButtonHeadless
             {...props}
-            className={clsx(styles.button, styles[`button_${variant}`], styles[`button_${scheme}`])}
+            className={clsx(
+                styles.button,
+                styles[`button_${variant}`],
+                styles[`button_${scheme}`],
+                isLoad === true && styles.button_load
+            )}
         >
-            {text}
+            {isLoad !== true && text}
         </ButtonHeadless>
     );
 };
