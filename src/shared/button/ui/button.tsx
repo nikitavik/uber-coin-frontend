@@ -8,14 +8,18 @@ type ButtonProps = {
     isLoad?: boolean | undefined;
     scheme: 'light' | 'dark';
     variant: 'small' | 'regular' | 'large';
+    func?: () => void;
 } & ComponentPropsWithoutRef<'button'>;
 
-export const Button: FC<ButtonProps> = ({ text, scheme, variant, isLoad, ...props }) => {
+export const Button: FC<ButtonProps> = ({ text, scheme, variant, isLoad, func, ...props }) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const handleClick = (): void => {
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
+            if (func) {
+                func();
+            }
         }, 2000);
     };
 
