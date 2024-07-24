@@ -24,6 +24,9 @@ export const Button: FC<ButtonProps> = ({ text, scheme, variant, isLoad, func, .
                 func();
             }
         }, 2000);
+        setTimeout(() => {
+            setButtonText(text);
+        }, 3000);
     };
 
     return (
