@@ -1,4 +1,4 @@
-import React, { FC, ComponentPropsWithoutRef, useState } from 'react';
+import React, { FC, ComponentPropsWithoutRef, useState, useEffect } from 'react';
 import { Button as ButtonHeadless } from '@headlessui/react';
 import clsx from 'clsx';
 import styles from './button.module.scss';
@@ -8,26 +8,22 @@ type ButtonProps = {
     isLoad?: boolean | undefined;
     scheme: 'light' | 'dark';
     variant: 'small' | 'regular' | 'large';
-    func?: (e?: HTMLButtonElement) => void;
+    func?: () => void;
 } & ComponentPropsWithoutRef<'button'>;
 
 export const Button: FC<ButtonProps> = ({ text, scheme, variant, isLoad, func, ...props }) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+    const [buttonText, setButtonText] = useState<string>(text);
+
+    const handleClick = (): void => {
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
+            setButtonText('Loaded');
             if (func) {
-                const elem = e.target as HTMLButtonElement;
-                func(elem);
+                func();
             }
         }, 2000);
-        setTimeout(() => {
-            if (func) {
-                const elem = e.target as HTMLButtonElement;
-                func(elem);
-            }
-        }, 2100);
     };
 
     return (
@@ -41,7 +37,7 @@ export const Button: FC<ButtonProps> = ({ text, scheme, variant, isLoad, func, .
             )}
             onClick={handleClick}
         >
-            {isLoad !== true && isLoading !== true && text}
+            {isLoad !== true && isLoading !== true && buttonText}
         </ButtonHeadless>
     );
 };
