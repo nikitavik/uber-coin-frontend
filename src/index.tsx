@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
-import { App } from './app/routes/App/ui/App';
+import { App } from './app/App';
 
 const rootNode = document.getElementById('root');
 
