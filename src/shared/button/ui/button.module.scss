@@ -6,6 +6,11 @@
     border: none;
     align-self: center;
 
+    &_xsmall {
+        width: 52px;
+        height: 27px;
+    }
+
     &_small {
         width: 60px;
         height: 48px;

@@ -7,7 +7,7 @@ type ButtonProps = {
     text: string;
     isLoad?: boolean | undefined;
     scheme: 'light' | 'dark';
-    variant: 'small' | 'regular' | 'large';
+    variant: 'xsmall' | 'small' | 'regular' | 'large';
     func?: () => void;
 } & ComponentPropsWithoutRef<'button'>;
 

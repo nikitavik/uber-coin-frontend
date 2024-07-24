@@ -7,6 +7,7 @@ export const App: FC = () => {
         <>
             <div className={styles.root}>App</div>
             <div className={styles.container}>
+                <Button text={'Uber'} scheme="light" variant="xsmall" />
                 <Button
                     text={'Uber'}
                     scheme="light"
@@ -15,6 +16,7 @@ export const App: FC = () => {
                 />
                 <Button text={'Uber'} scheme="light" variant="regular" />
                 <Button text={'Uber'} scheme="light" variant="large" />
+                <Button text={'Uber'} scheme="dark" variant="xsmall" />
                 <Button text={'Uber'} scheme="dark" variant="small" />
                 <Button text={'Uber'} scheme="dark" variant="regular" />
                 <Button text={'Uber'} scheme="dark" variant="large" />
