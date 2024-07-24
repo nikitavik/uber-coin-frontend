@@ -7,29 +7,21 @@
     align-self: center;
     position: relative;
     cursor: pointer;
+    padding-inline: 2rem;
 
-    &_xsmall {
-        font-size: var(--font-small);
-        width: 52px;
-        height: 27px;
+    &.smallSize {
+        height: 40px;
     }
 
-    &_small {
-        width: 60px;
+    &.regularSize {
+        height: 42px;
+    }
+
+    &.largeSize {
         height: 48px;
     }
 
-    &_regular {
-        width: 73px;
-        height: 48px;
-    }
-
-    &_large {
-        width: 343px;
-        height: 56px;
-        border-radius: 8px;
-    }
-
+    // TODO: Change to classMap
     &_light {
         background-color: var(--background-tertiary);
         color: var(--color-base);

@@ -10,44 +10,44 @@ export const App: FC = () => {
         <>
             <div className={styles.root}>App</div>
             <div className={styles.container}>
-                <Button scheme="light" variant="xsmall" />
+                <Button scheme="light" size="small" />
 
-                <Button scheme="light" variant="small" />
+                <Button scheme="light" size="small" />
 
-                <Button scheme="light" variant="regular">
+                <Button scheme="light" size="regular">
                     Uber
                 </Button>
-                <Button scheme="light" variant="large">
+                <Button scheme="light" size="large">
                     Uber
                 </Button>
-                <Button scheme="dark" variant="xsmall">
+                <Button scheme="dark" size="small">
                     Uber
                 </Button>
-                <Button scheme="dark" variant="small">
+                <Button scheme="dark" size="small">
                     Uber
                 </Button>
-                <Button scheme="dark" variant="regular">
+                <Button scheme="dark" size="regular">
                     Uber
                 </Button>
-                <Button scheme="dark" variant="large">
+                <Button scheme="dark" size="large">
                     Uber
                 </Button>
-                <Button scheme="dark" variant="small" isLoading>
+                <Button scheme="dark" size="small" isLoading>
                     Uber
                 </Button>
-                <Button scheme="dark" variant="regular" isLoading>
+                <Button scheme="dark" size="regular" isLoading>
                     Uber
                 </Button>
-                <Button scheme="dark" variant="large" isLoading>
+                <Button scheme="dark" size="large" isLoading>
                     Uber
                 </Button>
-                <Button scheme="light" variant="small" isLoading>
+                <Button scheme="light" size="small" isLoading>
                     Uber
                 </Button>
-                <Button scheme="light" variant="regular" isLoading>
+                <Button scheme="light" size="regular" isLoading>
                     Uber
                 </Button>
-                <Button scheme="light" variant="large" isLoading>
+                <Button scheme="light" size="large" isLoading>
                     Uber
                 </Button>
             </div>

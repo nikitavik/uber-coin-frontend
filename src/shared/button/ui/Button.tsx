@@ -2,17 +2,25 @@ import { FC, ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 import { Button as ButtonHeadless } from '@headlessui/react';
 import clsx from 'clsx';
 
-import styles from './Button.module.scss';
 import { Spinner } from '@shared/spinner';
+
+import styles from './Button.module.scss';
+
+type ButtonSize = 'small' | 'regular' | 'large';
+const sizeClassNameBySize: Record<ButtonSize, string> = {
+    small: styles.smallSize,
+    regular: styles.regularSize,
+    large: styles.largeSize,
+};
 
 type ButtonProps = {
     scheme: 'light' | 'dark';
-    variant: 'xsmall' | 'small' | 'regular' | 'large';
+    size?: ButtonSize;
     isLoading?: boolean;
 } & PropsWithChildren<ComponentPropsWithoutRef<'button'>>;
 
 export const Button: FC<ButtonProps> = (props) => {
-    const { children, scheme, variant, isLoading = false, onClick, ...restProps } = props;
+    const { children, scheme, size = 'regular', isLoading = false, onClick, ...restProps } = props;
 
     const hasChildren = children !== undefined;
 
@@ -36,7 +44,8 @@ export const Button: FC<ButtonProps> = (props) => {
         <ButtonHeadless
             className={clsx(
                 styles.button,
-                styles[`button_${variant}`],
+                sizeClassNameBySize[size],
+                // TODO: Change to classMap
                 styles[`button_${scheme}`]
             )}
             {...restProps}
