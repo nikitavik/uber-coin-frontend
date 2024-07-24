@@ -8,19 +8,26 @@ type ButtonProps = {
     isLoad?: boolean | undefined;
     scheme: 'light' | 'dark';
     variant: 'small' | 'regular' | 'large';
-    func?: () => void;
+    func?: (e?: HTMLButtonElement) => void;
 } & ComponentPropsWithoutRef<'button'>;
 
 export const Button: FC<ButtonProps> = ({ text, scheme, variant, isLoad, func, ...props }) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const handleClick = (): void => {
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
             if (func) {
-                func();
+                const elem = e.target as HTMLButtonElement;
+                func(elem);
             }
         }, 2000);
+        setTimeout(() => {
+            if (func) {
+                const elem = e.target as HTMLButtonElement;
+                func(elem);
+            }
+        }, 2100);
     };
 
     return (

@@ -11,9 +11,7 @@ export const App: FC = () => {
                     text={'Uber'}
                     scheme="light"
                     variant="small"
-                    func={() => {
-                        alert('Loaded and Clicked');
-                    }}
+                    func={(e) => (e!.innerText = 'Loaded')}
                 />
                 <Button text={'Uber'} scheme="light" variant="regular" />
                 <Button text={'Uber'} scheme="light" variant="large" />
