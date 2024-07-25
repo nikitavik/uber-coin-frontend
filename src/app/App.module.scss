@@ -4,6 +4,8 @@
 
 .container {
     display: flex;
+    width: 1000px;
+    margin: 0 auto;
     flex-direction: column;
     gap: 10px;
 }

@@ -17,10 +17,19 @@ type ButtonProps = {
     scheme: 'light' | 'dark';
     size?: ButtonSize;
     isLoading?: boolean;
+    isFullWidth?: boolean;
 } & PropsWithChildren<ComponentPropsWithoutRef<'button'>>;
 
 export const Button: FC<ButtonProps> = (props) => {
-    const { children, scheme, size = 'regular', isLoading = false, onClick, ...restProps } = props;
+    const {
+        children,
+        scheme,
+        size = 'regular',
+        isLoading = false,
+        isFullWidth = false,
+        onClick,
+        ...restProps
+    } = props;
 
     const hasChildren = children !== undefined;
 
@@ -46,7 +55,8 @@ export const Button: FC<ButtonProps> = (props) => {
                 styles.button,
                 sizeClassNameBySize[size],
                 // TODO: Change to classMap
-                styles[`button_${scheme}`]
+                styles[`button_${scheme}`],
+                isFullWidth && styles.button_fullwidth
             )}
             {...restProps}
         >

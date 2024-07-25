@@ -9,6 +9,11 @@
     cursor: pointer;
     padding-inline: 2rem;
 
+    &[data-disabled] {
+        background-color: var(--color-white-smoke);
+        color: var(--color-dark-grey);
+    }
+
     &.smallSize {
         height: 40px;
     }
@@ -21,15 +26,43 @@
         height: 48px;
     }
 
+    &_fullwidth {
+        width: 1000px;
+    }
+
     // TODO: Change to classMap
     &_light {
         background-color: var(--background-tertiary);
         color: var(--color-base);
+
+        &[data-hover] {
+            background-color: var(--color-light-grey);
+        }
+
+        &[data-focus] {
+            background-color: var(--color-light-grey);
+        }
+
+        &[data-active] {
+            background-color: var(--color-light-grey);
+        }
     }
 
     &_dark {
         background-color: var(--color-base);
         color: var(--color-invert);
+
+        &[data-hover] {
+            background-color: var(--color-dark-charcoal);
+        }
+
+        &[data-focus] {
+            background-color: var(--color-dark-charcoal);
+        }
+
+        &[data-active] {
+            background-color: var(--color-dark-charcoal);
+        }
     }
 
     &_load {

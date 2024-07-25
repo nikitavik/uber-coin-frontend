@@ -10,23 +10,23 @@ export const App: FC = () => {
         <>
             <div className={styles.root}>App</div>
             <div className={styles.container}>
-                <Button scheme="light" size="small" />
+                <Button scheme="light" size="small" isFullWidth />
 
                 <Button scheme="light" size="small" />
 
                 <Button scheme="light" size="regular">
                     Uber
                 </Button>
-                <Button scheme="light" size="large">
+                <Button scheme="light" size="large" isFullWidth>
                     Uber
                 </Button>
-                <Button scheme="dark" size="small">
+                <Button scheme="dark" size="small" disabled>
                     Uber
                 </Button>
-                <Button scheme="dark" size="small">
+                <Button scheme="dark" size="small" data-hover>
                     Uber
                 </Button>
-                <Button scheme="dark" size="regular">
+                <Button scheme="dark" size="regular" data-active>
                     Uber
                 </Button>
                 <Button scheme="dark" size="large">
