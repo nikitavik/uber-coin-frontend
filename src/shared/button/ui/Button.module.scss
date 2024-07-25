@@ -9,11 +9,6 @@
     cursor: pointer;
     padding-inline: 2rem;
 
-    &[data-disabled] {
-        background-color: var(--color-white-smoke);
-        color: var(--color-dark-grey);
-    }
-
     &.smallSize {
         height: 40px;
     }
@@ -30,8 +25,7 @@
         width: 1000px;
     }
 
-    // TODO: Change to classMap
-    &_light {
+    &.light {
         background-color: var(--background-tertiary);
         color: var(--color-base);
 
@@ -46,9 +40,14 @@
         &[data-active] {
             background-color: var(--color-light-grey);
         }
+
+        &[data-disabled] {
+            background-color: var(--color-white-smoke);
+            color: var(--color-dark-grey);
+        }
     }
 
-    &_dark {
+    &.dark {
         background-color: var(--color-base);
         color: var(--color-invert);
 
@@ -62,6 +61,11 @@
 
         &[data-active] {
             background-color: var(--color-dark-charcoal);
+        }
+
+        &[data-disabled] {
+            background-color: var(--color-white-smoke);
+            color: var(--color-dark-grey);
         }
     }
 

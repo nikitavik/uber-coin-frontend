@@ -10,44 +10,16 @@ export const App: FC = () => {
         <>
             <div className={styles.root}>App</div>
             <div className={styles.container}>
-                <Button scheme="light" size="small" isFullWidth />
-
-                <Button scheme="light" size="small" />
-
-                <Button scheme="light" size="regular">
+                <Button>Uber</Button>
+                <Button scheme="light">Uber</Button>
+                <Button disabled isFullWidth>
                     Uber
                 </Button>
-                <Button scheme="light" size="large" isFullWidth>
+                <Button isLoading>Uber</Button>
+                <Button scheme="light" isLoading>
                     Uber
                 </Button>
-                <Button scheme="dark" size="small" disabled>
-                    Uber
-                </Button>
-                <Button scheme="dark" size="small" data-hover>
-                    Uber
-                </Button>
-                <Button scheme="dark" size="regular" data-active>
-                    Uber
-                </Button>
-                <Button scheme="dark" size="large">
-                    Uber
-                </Button>
-                <Button scheme="dark" size="small" isLoading>
-                    Uber
-                </Button>
-                <Button scheme="dark" size="regular" isLoading>
-                    Uber
-                </Button>
-                <Button scheme="dark" size="large" isLoading>
-                    Uber
-                </Button>
-                <Button scheme="light" size="small" isLoading>
-                    Uber
-                </Button>
-                <Button scheme="light" size="regular" isLoading>
-                    Uber
-                </Button>
-                <Button scheme="light" size="large" isLoading>
+                <Button isLoading isFullWidth>
                     Uber
                 </Button>
             </div>

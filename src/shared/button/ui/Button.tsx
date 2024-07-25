@@ -6,6 +6,12 @@ import { Spinner } from '@shared/spinner';
 
 import styles from './Button.module.scss';
 
+type ButtonScheme = 'light' | 'dark';
+const schemeClassNameByScheme: Record<ButtonScheme, string> = {
+    light: styles.light,
+    dark: styles.dark,
+};
+
 type ButtonSize = 'small' | 'regular' | 'large';
 const sizeClassNameBySize: Record<ButtonSize, string> = {
     small: styles.smallSize,
@@ -14,7 +20,7 @@ const sizeClassNameBySize: Record<ButtonSize, string> = {
 };
 
 type ButtonProps = {
-    scheme: 'light' | 'dark';
+    scheme?: ButtonScheme;
     size?: ButtonSize;
     isLoading?: boolean;
     isFullWidth?: boolean;
@@ -23,7 +29,7 @@ type ButtonProps = {
 export const Button: FC<ButtonProps> = (props) => {
     const {
         children,
-        scheme,
+        scheme = 'dark',
         size = 'regular',
         isLoading = false,
         isFullWidth = false,
@@ -54,8 +60,7 @@ export const Button: FC<ButtonProps> = (props) => {
             className={clsx(
                 styles.button,
                 sizeClassNameBySize[size],
-                // TODO: Change to classMap
-                styles[`button_${scheme}`],
+                schemeClassNameByScheme[scheme],
                 isFullWidth && styles.button_fullwidth
             )}
             {...restProps}
