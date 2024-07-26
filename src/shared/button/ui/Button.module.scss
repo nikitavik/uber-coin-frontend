@@ -68,9 +68,8 @@
         }
 
         &[data-active] {
-            background-color: var(--color-invert);
+            background-color: var(--background-tertiary);
             color: var(--color-base);
-            border-color: var(--color-base);
         }
 
         &[data-disabled] {
