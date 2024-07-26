@@ -1,15 +1,21 @@
+@use '@app/styles/utils' as utils;
+
 .button {
+    @include utils.set-transition((color, background-color, border-color));
+
     border-radius: 999px;
     background-color: var(--color-base);
     color: var(--color-invert);
     font-size: var(--font-regular);
-    border: none;
+    font-weight: var(--font-weight-medium);
     align-self: center;
     position: relative;
     cursor: pointer;
     padding-inline: 2rem;
+    border: 1px solid transparent;
 
     &.smallSize {
+        font-size: var(--font-small);
         height: 40px;
     }
 
@@ -18,11 +24,12 @@
     }
 
     &.largeSize {
+        font-size: var(--font-large);
         height: 48px;
     }
 
-    &.fullwidth {
-        min-width: 100%;
+    &.fullWidth {
+        width: 100%;
     }
 
     &.light {
@@ -38,8 +45,8 @@
         }
 
         &[data-active] {
-            background-color: var(--color-light-grey);
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+            background-color: var(--color-base);
+            color: var(--color-invert);
         }
 
         &[data-disabled] {
@@ -61,8 +68,9 @@
         }
 
         &[data-active] {
-            background-color: var(--color-dark-charcoal);
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 1);
+            background-color: var(--color-invert);
+            color: var(--color-base);
+            border-color: var(--color-base);
         }
 
         &[data-disabled] {
@@ -85,11 +93,6 @@
     top: 0;
     width: 100%;
     height: 100%;
-}
-
-.contentContainer {
-    // TODO: Remove if obsolete
-    display: block;
 }
 
 .content {

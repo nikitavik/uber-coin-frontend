@@ -1,3 +1,5 @@
+@use './utils' as utils;
+
 :root {
     --background-color-base: #fff;
     --background-color-invert: #000;
@@ -19,10 +21,14 @@
     --color-125: #f1f0ed;
     --background-tertiary: #e8e8e8;
     --color-invert: #fff;
-    --font-xsmall: 12px;
-    --font-small: 14px;
-    --font-regular: 16px;
-    --font-large: 18px;
+    --font-xsmall: utils.to-rem(12px);
+    --font-small: utils.to-rem(14px);
+    --font-regular: utils.to-rem(16px);
+    --font-large: utils.to-rem(18px);
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
 }
 
 @font-face {

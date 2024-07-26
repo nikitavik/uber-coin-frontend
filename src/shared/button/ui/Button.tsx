@@ -40,7 +40,7 @@ export const Button: FC<ButtonProps> = (props) => {
     const hasChildren = children !== undefined;
 
     const innerContent = (
-        <span className={styles.contentContainer}>
+        <>
             {hasChildren && (
                 <span className={clsx(styles.content, isLoading && styles.isContentHidden)}>
                     {children}
@@ -52,7 +52,7 @@ export const Button: FC<ButtonProps> = (props) => {
                     <Spinner />
                 </span>
             )}
-        </span>
+        </>
     );
 
     return (
@@ -61,7 +61,7 @@ export const Button: FC<ButtonProps> = (props) => {
                 styles.button,
                 sizeClassNameBySize[size],
                 schemeClassNameByScheme[scheme],
-                isFullWidth && styles.fullwidth
+                isFullWidth && styles.fullWidth
             )}
             {...restProps}
         >
