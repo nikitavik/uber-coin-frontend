@@ -1,0 +1,104 @@
+@use '@app/styles/utils' as utils;
+
+.button {
+    @include utils.set-transition((color, background-color, border-color));
+
+    border-radius: 999px;
+    background-color: var(--color-base);
+    color: var(--color-invert);
+    font-size: var(--font-regular);
+    font-weight: var(--font-weight-medium);
+    align-self: center;
+    position: relative;
+    cursor: pointer;
+    padding-inline: 2rem;
+    border: 1px solid transparent;
+
+    &.smallSize {
+        font-size: var(--font-small);
+        height: 40px;
+    }
+
+    &.regularSize {
+        height: 42px;
+    }
+
+    &.largeSize {
+        font-size: var(--font-large);
+        height: 48px;
+    }
+
+    &.fullWidth {
+        width: 100%;
+    }
+
+    &.light {
+        background-color: var(--background-tertiary);
+        color: var(--color-base);
+
+        &[data-hover] {
+            background-color: var(--color-light-grey);
+        }
+
+        &[data-focus] {
+            background-color: var(--color-light-grey);
+        }
+
+        &[data-active] {
+            background-color: var(--color-base);
+            color: var(--color-invert);
+        }
+
+        &[data-disabled] {
+            background-color: var(--color-white-smoke);
+            color: var(--color-dark-grey);
+        }
+    }
+
+    &.dark {
+        background-color: var(--color-base);
+        color: var(--color-invert);
+
+        &[data-hover] {
+            background-color: var(--color-dark-charcoal);
+        }
+
+        &[data-focus] {
+            background-color: var(--color-dark-charcoal);
+        }
+
+        &[data-active] {
+            background-color: var(--color-invert);
+            color: var(--color-base);
+            border-color: var(--color-base);
+        }
+
+        &[data-disabled] {
+            background-color: var(--color-white-smoke);
+            color: var(--color-dark-grey);
+        }
+    }
+
+    &_load {
+        position: relative;
+    }
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    opacity: 1;
+
+    &.isContentHidden {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,42 @@
+.root {
+    pointer-events: none;
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes loader-animation {
+        0%,
+        25% {
+            stroke-dashoffset: 150;
+            transform: rotate(0);
+        }
+
+        100% {
+            stroke-dashoffset: 150;
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.svg {
+    animation: spin 2s linear infinite;
+}
+
+.circle {
+    fill: transparent;
+    stroke: currentcolor;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 200;
+    stroke-linecap: round;
+    stroke-width: 8px;
+    display: block;
+    transform-origin: 50% 50%;
+    animation: loader-animation 1.4s ease-in-out infinite both;
+}
