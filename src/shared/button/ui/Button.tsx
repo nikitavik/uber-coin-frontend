@@ -61,7 +61,7 @@ export const Button: FC<ButtonProps> = (props) => {
                 styles.button,
                 sizeClassNameBySize[size],
                 schemeClassNameByScheme[scheme],
-                isFullWidth && styles.button_fullwidth
+                isFullWidth && styles.fullwidth
             )}
             {...restProps}
         >
