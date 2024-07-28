@@ -32,7 +32,6 @@ module.exports = defineConfig({
         'linebreak-style': 'off',
         // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
         'import/prefer-default-export': 'off',
-        'import/no-default-export': 'error',
         // eslint-plugin-prettier by default looks into .prettierrc and "merge" rules with eslint
         // however we must explicitly set level of warning
         'prettier/prettier': 'error',
