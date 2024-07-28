@@ -14,9 +14,7 @@ type TextFieldProps = {
 export const TextField: FC<TextFieldProps> = (props) => {
     const { hasHintCheck, isCorrectDefault, label, ...restProps } = props;
     const [isCorrect] = useState<boolean | null>(
-        isCorrectDefault === true && isCorrectDefault !== null && isCorrectDefault !== undefined
-            ? true
-            : false
+        isCorrectDefault !== null && isCorrectDefault !== undefined ? isCorrectDefault : null
     );
     const innerContent = (
         <>
@@ -48,7 +46,11 @@ export const TextField: FC<TextFieldProps> = (props) => {
             <Label className={styles.label}>{label}</Label>
             <Input
                 {...restProps}
-                className={clsx(styles.input, isCorrect === false ? styles.wrong : styles.correct)}
+                className={clsx(
+                    styles.input,
+                    isCorrect === false && styles.wrong,
+                    isCorrect === true && styles.correct
+                )}
             />
             {innerContent}
         </Field>
