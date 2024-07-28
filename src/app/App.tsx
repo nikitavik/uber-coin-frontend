@@ -4,6 +4,7 @@ import './styles/global.scss';
 
 import styles from './App.module.scss';
 import { Button } from '@shared/button';
+import { TextField } from '@shared/text-field';
 
 export const App: FC = () => {
     return (
@@ -22,6 +23,11 @@ export const App: FC = () => {
                 <Button isLoading isFullWidth>
                     Uber
                 </Button>
+                <TextField
+                    label={'lebel'}
+                    description={'description bfbf'}
+                    placeholder={'Placeholder'}
+                />
             </div>
         </>
     );
