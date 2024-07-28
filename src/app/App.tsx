@@ -23,8 +23,19 @@ export const App: FC = () => {
                 <Button isLoading isFullWidth>
                     Uber
                 </Button>
-                <TextField label={'lebel'} placeholder={'Placeholder'} hasHintCheck />
-                <TextField label={'label'} placeholder={'Placeholder'} />
+                <TextField label={'lebel'} placeholder={'Placeholder'} />
+                <TextField
+                    label={'label'}
+                    placeholder={'Placeholder'}
+                    hasHintCheck={true}
+                    isCorrectDefault={true}
+                />
+                <TextField
+                    label={'label'}
+                    placeholder={'Placeholder'}
+                    isCorrectDefault={false}
+                    hasHintCheck
+                />
             </div>
         </>
     );

@@ -37,3 +37,23 @@
     align-items: center;
     gap: 4px;
 }
+
+.wrong {
+    color: var(--color-red);
+    border: 3px solid var(--color-red);
+    background-color: var(--background-color-base);
+}
+
+.correct {
+    color: var(--color-green);
+    border: 3px solid var(--color-green);
+    background-color: var(--background-color-base);
+}
+
+.hintCorrect {
+    color: var(--color-green);
+}
+
+.hintWrong {
+    color: var(--color-red);
+}
