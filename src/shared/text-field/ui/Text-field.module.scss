@@ -35,6 +35,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    font-size: var(--font-small);
 }
 
 .wrong {
@@ -64,7 +65,7 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    left: 90%;
+    left: calc(100% - 2rem);
     top: 28%;
 }
 

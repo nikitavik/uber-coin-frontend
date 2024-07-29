@@ -14,7 +14,7 @@ type TextFieldProps = {
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
     const { hasHintCheck, isCorrectDefault, label, ...restProps } = props;
-    const [value, setValue] = useState<string | undefined>('');
+    const [value, setValue] = useState<string>('');
     const [isCorrect] = useState<boolean | null>(
         isCorrectDefault !== null && isCorrectDefault !== undefined ? isCorrectDefault : null
     );

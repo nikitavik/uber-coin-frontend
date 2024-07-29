@@ -39,11 +39,13 @@ export const App: FC = () => {
                     placeholder={'Placeholder'}
                     hasHintCheck={true}
                     isCorrectDefault={true}
+                    value={'Correct'}
                 />
                 <TextField
                     label={'label'}
                     placeholder={'Placeholder'}
                     isCorrectDefault={false}
+                    value={'Wrong'}
                     hasHintCheck
                 />
             </div>
