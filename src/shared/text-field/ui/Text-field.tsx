@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, FC, PropsWithChildren, useState } from 'react';
+import { forwardRef, useState, InputHTMLAttributes } from 'react';
 import { Field, Input, Label } from '@headlessui/react';
 import WrongIcon from '../../../../assets/icons/wrong.svg?react';
 import CorrectIcon from '../../../../assets/icons/correct.svg?react';
@@ -9,14 +9,14 @@ type TextFieldProps = {
     hasHintCheck?: boolean;
     isCorrectDefault?: boolean;
     label: string;
-} & PropsWithChildren<ComponentPropsWithoutRef<'input'>>;
+} & InputHTMLAttributes<HTMLInputElement>;
 
-export const TextField: FC<TextFieldProps> = (props) => {
+export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
     const { hasHintCheck, isCorrectDefault, label, ...restProps } = props;
     const [isCorrect] = useState<boolean | null>(
         isCorrectDefault !== null && isCorrectDefault !== undefined ? isCorrectDefault : null
     );
-    const innerContent = (
+    const hint = (
         <>
             {hasHintCheck === true ? (
                 <div className={styles.hint}>
@@ -51,8 +51,9 @@ export const TextField: FC<TextFieldProps> = (props) => {
                     isCorrect === false && styles.wrong,
                     isCorrect === true && styles.correct
                 )}
+                ref={ref}
             />
-            {innerContent}
+            {hint}
         </Field>
     );
-};
+});
