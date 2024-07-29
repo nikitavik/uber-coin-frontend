@@ -24,6 +24,10 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
         setValue(target.value);
     };
 
+    const handleCancelButton = () => {
+        setValue('');
+    };
+
     const hint = (
         <>
             {hasHintCheck === true ? (
@@ -64,7 +68,9 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
                     )}
                     ref={ref}
                 />
-                {value !== '' && <CancelIcon className={styles.cancelIcon} />}
+                {value !== '' && (
+                    <CancelIcon className={styles.cancelIcon} onClick={handleCancelButton} />
+                )}
             </div>
             {hint}
         </Field>
