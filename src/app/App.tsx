@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 import './styles/global.scss';
 
@@ -7,11 +7,21 @@ import { Button } from '@shared/button';
 import { TextField } from '@shared/text-field';
 
 export const App: FC = () => {
+    const ref = useRef<HTMLInputElement>(null);
+
+    function handleFocus() {
+        ref.current!.focus();
+    }
+
     return (
         <>
             <div className={styles.root}>App</div>
             <div className={styles.container}>
-                <Button>Uber</Button>
+                <form>
+                    <TextField label={'lebel'} placeholder={'Placeholder'} ref={ref} />
+                    <Button onClick={handleFocus}>Uber</Button>
+                </form>
+                <Button onClick={() => alert('rrr')}>Uber</Button>
                 <Button scheme="light">Uber</Button>
                 <Button disabled isFullWidth>
                     Uber
