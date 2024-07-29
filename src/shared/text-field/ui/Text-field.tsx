@@ -1,7 +1,8 @@
-import { forwardRef, useState, InputHTMLAttributes } from 'react';
+import { forwardRef, useState, InputHTMLAttributes, ChangeEvent } from 'react';
 import { Field, Input, Label } from '@headlessui/react';
 import WrongIcon from '../../../../assets/icons/wrong.svg?react';
 import CorrectIcon from '../../../../assets/icons/correct.svg?react';
+import CancelIcon from '../../../../assets/icons/cancel.svg?react';
 import styles from './Text-field.module.scss';
 import clsx from 'clsx';
 
@@ -13,9 +14,16 @@ type TextFieldProps = {
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
     const { hasHintCheck, isCorrectDefault, label, ...restProps } = props;
+    const [value, setValue] = useState<string | undefined>('');
     const [isCorrect] = useState<boolean | null>(
         isCorrectDefault !== null && isCorrectDefault !== undefined ? isCorrectDefault : null
     );
+
+    const handleValue = (event: ChangeEvent<HTMLInputElement>) => {
+        const target = event.target as HTMLInputElement;
+        setValue(target.value);
+    };
+
     const hint = (
         <>
             {hasHintCheck === true ? (
@@ -44,15 +52,20 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
     return (
         <Field className={styles.textField}>
             <Label className={styles.label}>{label}</Label>
-            <Input
-                {...restProps}
-                className={clsx(
-                    styles.input,
-                    isCorrect === false && styles.wrong,
-                    isCorrect === true && styles.correct
-                )}
-                ref={ref}
-            />
+            <div className={styles.wrapper}>
+                <Input
+                    onChange={handleValue}
+                    value={value}
+                    {...restProps}
+                    className={clsx(
+                        styles.input,
+                        isCorrect === false && styles.wrong,
+                        isCorrect === true && styles.correct
+                    )}
+                    ref={ref}
+                />
+                {value !== '' && <CancelIcon className={styles.cancelIcon} />}
+            </div>
             {hint}
         </Field>
     );

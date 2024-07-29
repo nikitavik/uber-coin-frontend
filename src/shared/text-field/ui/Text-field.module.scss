@@ -11,14 +11,13 @@
 
 .input {
     box-sizing: border-box;
-    width: 343px;
-    height: 36px;
+    width: inherit;
+    height: inherit;
     border: none;
     border-radius: 8px;
     background-color: var(--background-tertiary);
     padding: 8px 16px;
     color: var(--color-base);
-    margin: 10px 0;
 
     &::placeholder {
         color: var(--color-zambezi);
@@ -56,4 +55,24 @@
 
 .hintWrong {
     color: var(--color-red);
+}
+
+.cancelIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 90%;
+    top: 28%;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    width: 343px;
+    height: 36px;
+    margin: 10px 0;
 }
