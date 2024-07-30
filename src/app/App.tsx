@@ -37,14 +37,14 @@ export const App: FC = () => {
                 <TextField
                     label={'label'}
                     placeholder={'Placeholder'}
-                    hasHintCheck={true}
-                    isCorrectDefault={true}
+                    hasHintCheck
+                    isCorrect
                     value={'Correct'}
                 />
                 <TextField
                     label={'label'}
                     placeholder={'Placeholder'}
-                    isCorrectDefault={false}
+                    isCorrect={false}
                     value={'Wrong'}
                     hasHintCheck
                 />

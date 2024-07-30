@@ -8,16 +8,13 @@ import clsx from 'clsx';
 
 type TextFieldProps = {
     hasHintCheck?: boolean;
-    isCorrectDefault?: boolean;
+    isCorrect?: boolean;
     label: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
-    const { hasHintCheck, isCorrectDefault, label, ...restProps } = props;
+    const { hasHintCheck = false, isCorrect, label, ...restProps } = props;
     const [value, setValue] = useState<string>('');
-    const [isCorrect] = useState<boolean | null>(
-        isCorrectDefault !== null && isCorrectDefault !== undefined ? isCorrectDefault : null
-    );
 
     const handleValue = (event: ChangeEvent<HTMLInputElement>) => {
         const target = event.target as HTMLInputElement;
@@ -29,28 +26,23 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
     };
 
     const hint = (
-        <>
-            {hasHintCheck === true ? (
-                <div className={styles.hint}>
-                    {isCorrect === true && (
-                        <>
-                            <CorrectIcon />
-                            <span className={styles.hintCorrect}>Hint</span>
-                        </>
-                    )}
-                    {isCorrect === false && (
-                        <>
-                            <WrongIcon />
-                            <span className={styles.hintWrong}>Hint</span>
-                        </>
-                    )}
-
-                    {isCorrect === null && <span>Hint</span>}
-                </div>
-            ) : (
-                <div className={styles.hint}>Hint</div>
+        <div className={styles.hint}>
+            {isCorrect !== undefined && hasHintCheck && (
+                <>{isCorrect ? <CorrectIcon /> : <WrongIcon />}</>
             )}
-        </>
+            <span
+                className={clsx(
+                    styles.hintText,
+                    isCorrect !== undefined
+                        ? isCorrect
+                            ? styles.isCorrect
+                            : styles.isWrong
+                        : undefined
+                )}
+            >
+                Hint
+            </span>
+        </div>
     );
 
     return (

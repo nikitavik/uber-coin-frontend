@@ -54,12 +54,14 @@
     background-color: var(--background-color-base);
 }
 
-.hintCorrect {
-    color: var(--color-green);
-}
+.hintText {
+    &.isCorrect {
+        color: var(--color-green);
+    }
 
-.hintWrong {
-    color: var(--color-red);
+    &.isWrong {
+        color: var(--color-red);
+    }
 }
 
 .cancelIcon {
