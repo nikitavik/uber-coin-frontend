@@ -48,6 +48,7 @@ export const App: FC = () => {
                     value={'Wrong'}
                     hasHintCheck
                 />
+                <TextField label={'Label'} hintText={'Different hint'} />
             </div>
         </>
     );

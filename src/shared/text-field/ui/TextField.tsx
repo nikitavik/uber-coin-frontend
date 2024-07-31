@@ -3,17 +3,18 @@ import { Field, Input, Label } from '@headlessui/react';
 import WrongIcon from '../../../../assets/icons/wrong.svg?react';
 import CorrectIcon from '../../../../assets/icons/correct.svg?react';
 import CancelIcon from '../../../../assets/icons/cancel.svg?react';
-import styles from './Text-field.module.scss';
+import styles from './TextField.module.scss';
 import clsx from 'clsx';
 
 type TextFieldProps = {
     hasHintCheck?: boolean;
+    hintText?: string;
     isCorrect?: boolean;
     label: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
-    const { hasHintCheck = false, isCorrect, label, ...restProps } = props;
+    const { hasHintCheck = false, isCorrect, label, hintText = 'Hint', ...restProps } = props;
     const [value, setValue] = useState<string>('');
 
     const handleValue = (event: ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +41,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
                         : undefined
                 )}
             >
-                Hint
+                {hintText}
             </span>
         </div>
     );
