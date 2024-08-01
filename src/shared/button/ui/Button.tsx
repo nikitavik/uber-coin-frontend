@@ -33,7 +33,6 @@ export const Button: FC<ButtonProps> = (props) => {
         size = 'regular',
         isLoading = false,
         isFullWidth = false,
-        onClick,
         ...restProps
     } = props;
 
