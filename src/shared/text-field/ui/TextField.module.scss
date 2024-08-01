@@ -1,3 +1,5 @@
+@use '@app/styles/utils' as utils;
+
 .textField {
     display: flex;
     flex-direction: column;
@@ -7,6 +9,7 @@
 .label {
     color: var(--color-base);
     font-weight: var(--font-weight-medium);
+    cursor: pointer;
 
     &::first-letter {
         text-transform: uppercase;
@@ -14,21 +17,18 @@
 }
 
 .input {
-    box-sizing: border-box;
-    width: inherit;
-    height: inherit;
     border: 3px solid transparent;
     border-radius: 8px;
     background-color: var(--background-tertiary);
-    padding: 8px 16px;
+    padding: 8px;
     color: var(--color-base);
+    outline: none;
 
     &::placeholder {
         color: var(--color-zambezi);
     }
 
     &[data-focus] {
-        outline: 0;
         outline-offset: 0;
         border-color: var(--color-base);
         background-color: var(--background-color-base);
@@ -65,21 +65,20 @@
 }
 
 .cancelIcon {
+    @include utils.set-size(16px);
+
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    width: 16px;
-    height: 16px;
-    left: calc(100% - 2rem);
-    top: 28%;
+    top: 0;
+    right: 0;
+    height: 100%;
+    margin-right: 10px;
 }
 
 .wrapper {
-    box-sizing: border-box;
     position: relative;
-    display: flex;
-    width: 343px;
-    height: 36px;
+    width: fit-content;
     margin: 10px 0;
 }

@@ -1,8 +1,8 @@
 import { forwardRef, useState, InputHTMLAttributes, ChangeEvent } from 'react';
 import { Field, Input, Label } from '@headlessui/react';
-import WrongIcon from '../../../../assets/icons/wrong.svg?react';
-import CorrectIcon from '../../../../assets/icons/correct.svg?react';
-import CancelIcon from '../../../../assets/icons/cancel.svg?react';
+import WrongIcon from '../assets/icons/wrong.svg?react';
+import CorrectIcon from '../assets/icons/correct.svg?react';
+import CancelIcon from '../assets/icons/cancel.svg?react';
 import styles from './TextField.module.scss';
 import clsx from 'clsx';
 

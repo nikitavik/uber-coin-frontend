@@ -18,7 +18,7 @@ export const App: FC = () => {
             <div className={styles.root}>App</div>
             <div className={styles.container}>
                 <form>
-                    <TextField label={'lebel'} placeholder={'Placeholder'} ref={ref} />
+                    <TextField label="label" placeholder="Placeholder" ref={ref} />
                     <Button onClick={handleFocus}>Uber</Button>
                 </form>
                 <Button onClick={() => alert('rrr')}>Uber</Button>
@@ -33,22 +33,22 @@ export const App: FC = () => {
                 <Button isLoading isFullWidth>
                     Uber
                 </Button>
-                <TextField label={'lebel'} placeholder={'Placeholder'} />
+                <TextField label="lebel" placeholder="Placeholder" />
                 <TextField
-                    label={'label'}
-                    placeholder={'Placeholder'}
+                    label="label"
+                    placeholder="Placeholder"
                     hasHintCheck
                     isCorrect
-                    value={'Correct'}
+                    value="Correct"
                 />
                 <TextField
-                    label={'label'}
-                    placeholder={'Placeholder'}
+                    label="label"
+                    placeholder="Placeholder"
                     isCorrect={false}
-                    value={'Wrong'}
+                    value="Wrong"
                     hasHintCheck
                 />
-                <TextField label={'Label'} hintText={'Different hint'} />
+                <TextField label="Label" hintText="Different hint" />
             </div>
         </>
     );
