@@ -14,7 +14,7 @@ type TextFieldProps = {
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
-    const { hasHintCheck = false, isCorrect, label, hintText = 'Hint', ...restProps } = props;
+    const { hasHintCheck = false, isCorrect, label, hintText = '', ...restProps } = props;
     const [value, setValue] = useState<string>('');
 
     const handleValue = (event: ChangeEvent<HTMLInputElement>) => {

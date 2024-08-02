@@ -12,7 +12,7 @@ export const LogInModal: FC = () => {
                 <>
                     <h1>Log in</h1>
                     <TextField label={'Email address'} placeholder={'Email'} />
-                    <TextField label={'Password'} placeholder={'Password'} />
+                    <TextField label={'Password'} placeholder={'Password'} type={'password'} />
                     <Button>Log in</Button>
                 </>
             }
