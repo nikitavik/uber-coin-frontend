@@ -1,13 +1,15 @@
-.logIn {
-    width: 200px;
-    height: 200px;
-}
-
-.signUp {
-    width: 200px;
-    height: 200px;
-}
-
 .modal {
-    background-color: red;
+    background-color: var(--background-color-base);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #0000001f;
+    max-width: 520px;
+    padding: 16px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0 0 25px 0 #00000033;
 }

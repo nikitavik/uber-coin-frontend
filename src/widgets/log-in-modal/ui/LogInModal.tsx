@@ -1,7 +1,21 @@
 import { FC } from 'react';
-import styles from './LogInModal.module.scss';
-import clsx from 'clsx';
+import { Modal } from '@shared/modal';
+import { TextField } from '@shared/text-field';
+import { Button } from '@shared/button';
+// import styles from './LogInModal.module.scss';
+// import clsx from 'clsx';
 
 export const LogInModal: FC = () => {
-    return <div className={clsx(styles.modal)}></div>;
+    return (
+        <Modal>
+            {
+                <>
+                    <h1>Log in</h1>
+                    <TextField label={'Email address'} placeholder={'Email'} />
+                    <TextField label={'Password'} placeholder={'Password'} />
+                    <Button>Log in</Button>
+                </>
+            }
+        </Modal>
+    );
 };
