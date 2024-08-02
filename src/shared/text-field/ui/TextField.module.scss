@@ -77,6 +77,19 @@
     margin-right: 10px;
 }
 
+.showIcon {
+    @include utils.set-size(16px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    margin-right: 30px;
+}
+
 .wrapper {
     position: relative;
     width: fit-content;
