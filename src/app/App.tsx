@@ -4,7 +4,6 @@ import './styles/global.scss';
 
 import styles from './App.module.scss';
 import { Button } from '@shared/button';
-import { Modal } from '@shared/modal';
 import { TextField } from '@shared/text-field';
 import { LogInModal } from '@widgets/log-in-modal';
 
@@ -51,8 +50,9 @@ export const App: FC = () => {
                     hasHintCheck
                 />
                 <TextField label="Label" hintText="Different hint" />
-                <LogInModal />
-                <Modal>{<TextField label={'label'} />}</Modal>
+                <div style={{ left: '100px' }}>
+                    <LogInModal />
+                </div>
             </div>
         </>
     );

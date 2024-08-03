@@ -1,15 +1,14 @@
-import { FC, ComponentPropsWithoutRef, PropsWithChildren } from 'react';
+import { FC } from 'react';
+import { Dialog, DialogPanel, DialogProps } from '@headlessui/react';
 import clsx from 'clsx';
 import styles from './Modal.module.scss';
 
-type ModalProps = PropsWithChildren<ComponentPropsWithoutRef<'form'>>;
-
-export const Modal: FC<ModalProps> = (props) => {
+export const Modal: FC<DialogProps> = (props) => {
     const { children, ...restProps } = props;
 
     return (
-        <form className={clsx(styles.modal)} {...restProps}>
-            {children}
-        </form>
+        <Dialog className={clsx(styles.overlay)} {...restProps}>
+            <DialogPanel className={clsx(styles.modal)}>{children}</DialogPanel>
+        </Dialog>
     );
 };

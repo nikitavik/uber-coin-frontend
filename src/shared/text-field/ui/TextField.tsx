@@ -32,9 +32,9 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
     const [type, setType] = useState<TextFieldPassword>('password');
     const refer = useRef<HTMLInputElement>(null);
 
-    function handleFocus() {
+    const handleFocus = () => {
         refer.current!.focus();
-    }
+    };
 
     const handleValue = (event: ChangeEvent<HTMLInputElement>) => {
         const target = event.target as HTMLInputElement;
