@@ -6,6 +6,7 @@ import styles from './App.module.scss';
 import { Button } from '@shared/button';
 import { TextField } from '@shared/text-field';
 import { LogInModal } from '@widgets/log-in-modal';
+import { SignUpModal } from '@widgets/sign-up-modal';
 
 export const App: FC = () => {
     const ref = useRef<HTMLInputElement>(null);
@@ -53,6 +54,7 @@ export const App: FC = () => {
                 <div style={{ left: '100px' }}>
                     <LogInModal />
                 </div>
+                <SignUpModal />
             </div>
         </>
     );

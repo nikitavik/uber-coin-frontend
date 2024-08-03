@@ -4,7 +4,7 @@ import { TextField } from '@shared/text-field';
 import { Button } from '@shared/button';
 import { Fieldset } from '@shared/fieldset';
 
-export const LogInModal: FC = () => {
+export const SignUpModal: FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(true);
 
     const handleOpen = () => {
@@ -18,10 +18,10 @@ export const LogInModal: FC = () => {
         <Modal open={isOpen} onClose={() => {}}>
             {
                 <Fieldset>
-                    <h1>Log in</h1>
+                    <h1>Sign up</h1>
                     <TextField label={'Email address'} placeholder={'Email'} />
                     <TextField label={'Password'} placeholder={'Password'} isPassword={true} />
-                    <Button onClick={handleOpen}>Log in</Button>
+                    <Button onClick={handleOpen}>Sign up</Button>
                 </Fieldset>
             }
         </Modal>
