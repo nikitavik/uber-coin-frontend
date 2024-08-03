@@ -94,7 +94,13 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
                     ref={isPassword === true ? refer : ref}
                 />
                 {value !== '' && (
-                    <CancelIcon className={styles.cancelIcon} onClick={handleCancelButton} />
+                    <CancelIcon
+                        className={clsx(
+                            styles.cancelIcon,
+                            isPassword === true && styles.cancelIconPassword
+                        )}
+                        onClick={handleCancelButton}
+                    />
                 )}
                 {isPassword === true ? (
                     showPassword ? (
