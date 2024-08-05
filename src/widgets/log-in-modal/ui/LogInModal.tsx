@@ -7,21 +7,16 @@ import { Fieldset } from '@shared/fieldset';
 export const LogInModal: FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(true);
 
-    const handleOpen = () => {
-        if (isOpen) {
-            setIsOpen(false);
-        } else {
-            setIsOpen(true);
-        }
-    };
+    const toggleOpen = () => setIsOpen((prevOpen) => !prevOpen);
+
     return (
-        <Modal open={isOpen} onClose={() => {}}>
+        <Modal open={isOpen} onClose={toggleOpen}>
             {
                 <Fieldset>
                     <h1>Log in</h1>
                     <TextField label={'Email address'} placeholder={'Email'} />
                     <TextField label={'Password'} placeholder={'Password'} isPassword={true} />
-                    <Button onClick={handleOpen}>Log in</Button>
+                    <Button onClick={toggleOpen}>Log in</Button>
                 </Fieldset>
             }
         </Modal>

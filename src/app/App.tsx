@@ -51,9 +51,9 @@ export const App: FC = () => {
                     hasHintCheck
                 />
                 <TextField label="Label" hintText="Different hint" />
-                <div style={{ left: '100px' }}>
-                    <LogInModal />
-                </div>
+
+                <LogInModal />
+
                 <SignUpModal />
             </div>
         </>
