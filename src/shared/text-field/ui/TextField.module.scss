@@ -17,10 +17,13 @@
 }
 
 .input {
-    border: 3px solid transparent;
+    @include utils.set-transition((border-color));
+
+    border: 2px solid transparent;
     border-radius: 8px;
     background-color: var(--background-tertiary);
-    padding: 8px;
+    // TODO: Make padding dynamic. Should depend on actions block length
+    padding: 8px 26px 8px 8px;
     color: var(--color-base);
     outline: none;
 
@@ -29,7 +32,6 @@
     }
 
     &[data-focus] {
-        outline-offset: 0;
         border-color: var(--color-base);
         background-color: var(--background-color-base);
     }
@@ -64,34 +66,33 @@
     }
 }
 
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    margin-right: 10px;
+    column-gap: 2px;
+}
+
+.cancelButton {
+    @include utils.set-transition(opacity, ease, 80ms);
+
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+
+    &.isVisible {
+        opacity: 1;
+        pointer-events: revert;
+    }
+}
+
 .cancelIcon {
     @include utils.set-size(16px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    margin-right: 10px;
-}
-
-.cancelIconPassword {
-    margin-right: 30px;
-}
-
-.showIcon {
-    @include utils.set-size(16px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    margin-right: 10px;
 }
 
 .wrapper {

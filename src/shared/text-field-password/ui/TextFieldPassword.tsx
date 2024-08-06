@@ -1,37 +1,23 @@
-import { forwardRef, useState, InputHTMLAttributes, ChangeEvent } from 'react';
-import { Field, Input, Label } from '@headlessui/react';
-import WrongIcon from '@shared/text-field-password/assets/icons/wrong.svg?react';
+import { forwardRef, useState, InputHTMLAttributes, useRef } from 'react';
+import mergeRefs from 'merge-refs';
+
+import { TextField, TextFieldProps } from '@shared/text-field';
+
 import EyeIcon from '@shared/text-field-password/assets/icons/eye_open.svg?react';
 import EyeCloseIcon from '@shared/text-field-password/assets/icons/eye_close.svg?react';
-import CorrectIcon from '@shared/text-field-password/assets/icons/correct.svg?react';
-import CancelIcon from '@shared/text-field-password/assets/icons/cancel.svg?react';
-import styles from '@shared/text-field/ui/TextField.module.scss';
-import clsx from 'clsx';
 
-type TextFieldPasswordProps = {
-    hasHintCheck?: boolean;
-    hintText?: string;
-    isCorrect?: boolean;
-    label: string;
-} & InputHTMLAttributes<HTMLInputElement>;
+import styles from './TextFieldPassword.module.scss';
+
+type TextFieldPasswordProps = TextFieldProps & InputHTMLAttributes<HTMLInputElement>;
 
 type TextFieldPasswordType = 'password' | 'text';
 
 export const TextFieldPassword = forwardRef<HTMLInputElement, TextFieldPasswordProps>(
     (props, ref) => {
-        const { hasHintCheck = false, isCorrect, label, hintText = '', ...restProps } = props;
-        const [value, setValue] = useState<string>('');
         const [showPassword, setShowPassword] = useState<boolean>(false);
         const [type, setType] = useState<TextFieldPasswordType>('password');
 
-        const handleValue = (event: ChangeEvent<HTMLInputElement>) => {
-            const target = event.target as HTMLInputElement;
-            setValue(target.value);
-        };
-
-        const handleCancelButton = () => {
-            setValue('');
-        };
+        const localRef = useRef<HTMLInputElement | null>(null);
 
         const handleShowPasswordButton = () => {
             if (showPassword) {
@@ -41,63 +27,33 @@ export const TextFieldPassword = forwardRef<HTMLInputElement, TextFieldPasswordP
                 setType('text');
                 setShowPassword(true);
             }
+            console.log(localRef.current?.value.length);
+            localRef.current?.focus();
         };
 
-        const hint = (
-            <div className={styles.hint}>
-                {isCorrect !== undefined && hasHintCheck && (
-                    <>{isCorrect ? <CorrectIcon /> : <WrongIcon />}</>
-                )}
-                <span
-                    className={clsx(
-                        styles.hintText,
-                        isCorrect !== undefined
-                            ? isCorrect
-                                ? styles.isCorrect
-                                : styles.isWrong
-                            : undefined
-                    )}
-                >
-                    {hintText}
-                </span>
-            </div>
-        );
-
         return (
-            <Field className={styles.textField}>
-                <Label className={styles.label}>{label}</Label>
-                <div className={styles.wrapper}>
-                    <Input
-                        onChange={handleValue}
-                        value={value}
-                        type={type}
-                        {...restProps}
-                        className={clsx(
-                            styles.input,
-                            isCorrect === false && styles.wrong,
-                            isCorrect === true && styles.correct
-                        )}
-                        ref={ref}
-                    />
-                    {value !== '' && (
-                        <button type="button" onClick={handleCancelButton}>
-                            <CancelIcon
-                                className={clsx(styles.cancelIcon, styles.cancelIconPassword)}
-                            />
-                        </button>
-                    )}
-                    {showPassword ? (
-                        <button type="button" onClick={handleShowPasswordButton}>
-                            <EyeCloseIcon className={styles.showIcon} />
-                        </button>
-                    ) : (
-                        <button type="button" onClick={handleShowPasswordButton}>
-                            <EyeIcon className={styles.showIcon} />
-                        </button>
-                    )}
-                </div>
-                {hint}
-            </Field>
+            <TextField
+                type={type}
+                actionButtons={
+                    <>
+                        {
+                            <button
+                                type="button"
+                                onClick={handleShowPasswordButton}
+                                className={styles.showButton}
+                            >
+                                {showPassword ? (
+                                    <EyeCloseIcon className={styles.showIcon} />
+                                ) : (
+                                    <EyeIcon className={styles.showIcon} />
+                                )}
+                            </button>
+                        }
+                    </>
+                }
+                ref={mergeRefs(localRef, ref)}
+                {...props}
+            />
         );
     }
 );
