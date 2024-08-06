@@ -6,7 +6,7 @@ import styles from './App.module.scss';
 import { Button } from '@shared/button';
 import { TextField } from '@shared/text-field';
 import { LogInModal } from '@widgets/log-in-modal';
-import { SignUpModal } from '@widgets/sign-up-modal';
+import { TextFieldPassword } from '@shared/text-field-password';
 
 export const App: FC = () => {
     const ref = useRef<HTMLInputElement>(null);
@@ -51,10 +51,8 @@ export const App: FC = () => {
                     hasHintCheck
                 />
                 <TextField label="Label" hintText="Different hint" />
-
+                <TextFieldPassword label="Password" />
                 <LogInModal />
-
-                <SignUpModal />
             </div>
         </>
     );

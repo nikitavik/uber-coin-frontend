@@ -1,101 +1,105 @@
 @use '@app/styles/utils' as utils;
 
-.textField {
-    display: flex;
-    flex-direction: column;
-    font-size: var(--font-small-px);
-}
-
-.label {
-    color: var(--color-base);
-    font-weight: var(--font-weight-medium);
-    cursor: pointer;
-
-    &::first-letter {
-        text-transform: uppercase;
-    }
-}
-
-.input {
-    border: 3px solid transparent;
-    border-radius: 8px;
-    background-color: var(--background-tertiary);
-    padding: 8px;
-    color: var(--color-base);
-    outline: none;
-
-    &::placeholder {
-        color: var(--color-zambezi);
+@mixin text-field {
+    .textField {
+        display: flex;
+        flex-direction: column;
+        font-size: var(--font-small-px);
     }
 
-    &[data-focus] {
-        outline-offset: 0;
-        border-color: var(--color-base);
+    .label {
+        color: var(--color-base);
+        font-weight: var(--font-weight-medium);
+        cursor: pointer;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    .input {
+        border: 3px solid transparent;
+        border-radius: 8px;
+        background-color: var(--background-tertiary);
+        padding: 8px;
+        color: var(--color-base);
+        outline: none;
+
+        &::placeholder {
+            color: var(--color-zambezi);
+        }
+
+        &[data-focus] {
+            outline-offset: 0;
+            border-color: var(--color-base);
+            background-color: var(--background-color-base);
+        }
+    }
+
+    .hint {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--color-light-grey);
+    }
+
+    .wrong {
+        color: var(--color-red);
+        border-color: var(--color-red);
         background-color: var(--background-color-base);
     }
-}
 
-.hint {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: var(--color-light-grey);
-}
-
-.wrong {
-    color: var(--color-red);
-    border-color: var(--color-red);
-    background-color: var(--background-color-base);
-}
-
-.correct {
-    color: var(--color-green);
-    border-color: var(--color-green);
-    background-color: var(--background-color-base);
-}
-
-.hintText {
-    &.isCorrect {
+    .correct {
         color: var(--color-green);
+        border-color: var(--color-green);
+        background-color: var(--background-color-base);
     }
 
-    &.isWrong {
-        color: var(--color-red);
+    .hintText {
+        &.isCorrect {
+            color: var(--color-green);
+        }
+
+        &.isWrong {
+            color: var(--color-red);
+        }
+    }
+
+    .cancelIcon {
+        @include utils.set-size(16px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        margin-right: 10px;
+    }
+
+    .cancelIconPassword {
+        margin-right: 30px;
+    }
+
+    .showIcon {
+        @include utils.set-size(16px);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        margin-right: 10px;
+    }
+
+    .wrapper {
+        position: relative;
+        width: fit-content;
+        margin: 10px 0;
     }
 }
 
-.cancelIcon {
-    @include utils.set-size(16px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    margin-right: 10px;
-}
-
-.cancelIconPassword {
-    margin-right: 30px;
-}
-
-.showIcon {
-    @include utils.set-size(16px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    margin-right: 10px;
-}
-
-.wrapper {
-    position: relative;
-    width: fit-content;
-    margin: 10px 0;
-}
+@include text-field;

@@ -19,8 +19,8 @@ export const SignUpModal: FC = () => {
             {
                 <Fieldset>
                     <h1>Sign up</h1>
-                    <TextField label={'Email address'} placeholder={'Email'} />
-                    <TextField label={'Password'} placeholder={'Password'} isPassword={true} />
+                    <TextField label="Email address" placeholder="Email" />
+                    <TextField label="Password" placeholder="Password" />
                     <Button onClick={handleOpen}>Sign up</Button>
                 </Fieldset>
             }
