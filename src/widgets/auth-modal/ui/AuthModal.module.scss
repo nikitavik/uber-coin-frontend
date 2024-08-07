@@ -5,14 +5,9 @@
 .buttonsWrapper {
     display: flex;
     gap: 1rem;
+    justify-content: space-between;
 }
 
-.fieldset {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 400px;
-    width: 100%;
-    gap: 1rem;
+.modal {
+    max-width: 320px;
 }

@@ -17,11 +17,14 @@ export const AuthModal: FC = () => {
     return (
         <div className={styles.wrapper}>
             <Button onClick={handleOpen}>Authorization</Button>
-            <Modal open={isOpen} onClose={toggleOpen}>
-                <Fieldset className={styles.fieldset}>
+
+            <Modal open={isOpen} onClose={toggleOpen} className={styles.modal}>
+                <Fieldset>
                     <h1>Log in</h1>
+
                     <TextField label="Email address" placeholder="Email" />
                     <TextFieldPassword label="Password" placeholder="Password" />
+
                     <div className={styles.buttonsWrapper}>
                         <Button onClick={toggleOpen} size="small">
                             Sign up

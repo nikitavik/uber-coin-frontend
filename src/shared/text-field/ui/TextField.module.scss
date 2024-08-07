@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     font-size: var(--font-small-px);
+    width: 100%;
 }
 
 .label {
@@ -85,6 +86,11 @@
     opacity: 0;
     pointer-events: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
 
     &.isVisible {
         opacity: 1;
@@ -98,11 +104,16 @@
 
 .wrapper {
     position: relative;
-    width: fit-content;
     margin: 10px 0;
+    width: 100%;
 }
 
 .showButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
     cursor: pointer;
 }
 
