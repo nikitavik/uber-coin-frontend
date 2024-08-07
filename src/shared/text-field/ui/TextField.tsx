@@ -1,20 +1,31 @@
-import { forwardRef, useState, InputHTMLAttributes, ChangeEvent } from 'react';
+import { forwardRef, useState, InputHTMLAttributes, ChangeEvent, ReactNode } from 'react';
 import { Field, Input, Label } from '@headlessui/react';
-import WrongIcon from '../assets/icons/wrong.svg?react';
-import CorrectIcon from '../assets/icons/correct.svg?react';
-import CancelIcon from '../assets/icons/cancel.svg?react';
-import styles from './TextField.module.scss';
 import clsx from 'clsx';
 
-type TextFieldProps = {
+import WrongIcon from '@shared/text-field/assets/icons/wrong.svg?react';
+import CorrectIcon from '@shared/text-field/assets/icons/correct.svg?react';
+import CancelIcon from '@shared/text-field/assets/icons/cancel.svg?react';
+
+import styles from './TextField.module.scss';
+
+export type TextFieldProps = {
     hasHintCheck?: boolean;
     hintText?: string;
     isCorrect?: boolean;
     label: string;
+    actionButtons?: ReactNode;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
-    const { hasHintCheck = false, isCorrect, label, hintText = 'Hint', ...restProps } = props;
+    const {
+        hasHintCheck = false,
+        isCorrect,
+        label,
+        actionButtons,
+        hintText = '',
+        className,
+        ...restProps
+    } = props;
     const [value, setValue] = useState<string>('');
 
     const handleValue = (event: ChangeEvent<HTMLInputElement>) => {
@@ -25,6 +36,8 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
     const handleCancelButton = () => {
         setValue('');
     };
+
+    const hasValue = value !== '';
 
     const hint = (
         <div className={styles.hint}>
@@ -51,19 +64,29 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
             <Label className={styles.label}>{label}</Label>
             <div className={styles.wrapper}>
                 <Input
+                    ref={ref}
                     onChange={handleValue}
                     value={value}
-                    {...restProps}
                     className={clsx(
                         styles.input,
                         isCorrect === false && styles.wrong,
-                        isCorrect === true && styles.correct
+                        isCorrect === true && styles.correct,
+                        className
                     )}
-                    ref={ref}
+                    {...restProps}
                 />
-                {value !== '' && (
-                    <CancelIcon className={styles.cancelIcon} onClick={handleCancelButton} />
-                )}
+
+                <div className={styles.actions}>
+                    <button
+                        onClick={handleCancelButton}
+                        type={'button'}
+                        className={clsx(styles.cancelButton, hasValue && styles.isVisible)}
+                    >
+                        <CancelIcon className={styles.cancelIcon} />
+                    </button>
+
+                    {actionButtons}
+                </div>
             </div>
             {hint}
         </Field>

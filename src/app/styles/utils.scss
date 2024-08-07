@@ -7,8 +7,8 @@
 
 @mixin set-transition(
     $properties: (),
-    $duration: vars.$transitionDefaultDuration,
-    $timingFunction: vars.$transitionDefaultTimingFunction
+    $duration: vars.$transition-default-duration,
+    $timingFunction: vars.$transition-default-timing-function
 ) {
     @if (length($properties) == 1) {
         transition: $properties $duration $timingFunction;

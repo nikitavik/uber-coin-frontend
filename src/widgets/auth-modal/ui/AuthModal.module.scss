@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+}
+
+.buttonsWrapper {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.modal {
+    max-width: 320px;
+}
