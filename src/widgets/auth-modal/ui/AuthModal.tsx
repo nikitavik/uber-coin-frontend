@@ -12,11 +12,9 @@ export const AuthModal: FC = () => {
 
     const toggleOpen = () => setIsOpen((prevOpen) => !prevOpen);
 
-    const handleOpen = () => (!isOpen ? setIsOpen(true) : setIsOpen(false));
-
     return (
         <div className={styles.wrapper}>
-            <Button onClick={handleOpen}>Authorization</Button>
+            <Button onClick={toggleOpen}>Authorization</Button>
 
             <Modal open={isOpen} onClose={toggleOpen} className={styles.modal}>
                 <Fieldset>
