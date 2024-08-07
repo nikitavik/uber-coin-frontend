@@ -1,12 +1,12 @@
 import { forwardRef, useState, InputHTMLAttributes, useRef } from 'react';
 import mergeRefs from 'merge-refs';
 
-import { TextField, TextFieldProps } from '@shared/text-field';
+import { TextField, type TextFieldProps } from './TextField';
 
-import EyeIcon from '@shared/text-field-password/assets/icons/eye_open.svg?react';
-import EyeCloseIcon from '@shared/text-field-password/assets/icons/eye_close.svg?react';
+import EyeCloseIcon from '../assets/icons/eye_close.svg?react';
+import EyeIcon from '../assets/icons/eye_open.svg?react';
 
-import styles from './TextFieldPassword.module.scss';
+import styles from './TextField.module.scss';
 
 type TextFieldPasswordProps = TextFieldProps & InputHTMLAttributes<HTMLInputElement>;
 
@@ -27,7 +27,7 @@ export const TextFieldPassword = forwardRef<HTMLInputElement, TextFieldPasswordP
                 setType('text');
                 setShowPassword(true);
             }
-            console.log(localRef.current?.value.length);
+
             localRef.current?.focus();
         };
 

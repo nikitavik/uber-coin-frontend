@@ -1,12 +1,12 @@
 import { FC, useRef } from 'react';
 
+import { Button } from '@shared/button';
+import { TextField, TextFieldPassword } from '@shared/text-field';
+import { AuthModal } from '@widgets/auth-modal';
+
 import './styles/global.scss';
 
 import styles from './App.module.scss';
-import { Button } from '@shared/button';
-import { TextField } from '@shared/text-field';
-import { AuthModal } from '@widgets/auth-modal';
-import { TextFieldPassword } from '@shared/text-field-password';
 
 export const App: FC = () => {
     const ref = useRef<HTMLInputElement>(null);

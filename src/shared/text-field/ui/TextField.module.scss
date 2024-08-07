@@ -101,3 +101,11 @@
     width: fit-content;
     margin: 10px 0;
 }
+
+.showButton {
+    cursor: pointer;
+}
+
+.showIcon {
+    @include utils.set-size(16px);
+}
