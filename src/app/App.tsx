@@ -5,7 +5,7 @@ import './styles/global.scss';
 import styles from './App.module.scss';
 import { Button } from '@shared/button';
 import { TextField } from '@shared/text-field';
-import { LogInModal } from '@widgets/log-in-modal';
+import { AuthModal } from '@widgets/auth-modal';
 import { TextFieldPassword } from '@shared/text-field-password';
 
 export const App: FC = () => {
@@ -52,7 +52,7 @@ export const App: FC = () => {
                 />
                 <TextField label="Label" hintText="Different hint" />
                 <TextFieldPassword label="Password" />
-                <LogInModal />
+                <AuthModal />
             </div>
         </>
     );
