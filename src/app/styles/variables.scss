@@ -1,4 +1,4 @@
 // Transitions
-$transitionDefaultDuration: 0.25s !default;
-$transitionDefaultTimingFunction: ease !default;
-$transitionDefault: $transitionDefaultDuration $transitionDefaultTimingFunction !default;
+$transition-default-duration: 0.25s !default;
+$transition-default-timing-function: ease !default;
+$transition-default: $transition-default-duration $transition-default-timing-function !default;

@@ -35,21 +35,17 @@ export const TextFieldPassword = forwardRef<HTMLInputElement, TextFieldPasswordP
             <TextField
                 type={type}
                 actionButtons={
-                    <>
-                        {
-                            <button
-                                type="button"
-                                onClick={handleShowPasswordButton}
-                                className={styles.showButton}
-                            >
-                                {showPassword ? (
-                                    <EyeCloseIcon className={styles.showIcon} />
-                                ) : (
-                                    <EyeIcon className={styles.showIcon} />
-                                )}
-                            </button>
-                        }
-                    </>
+                    <button
+                        type="button"
+                        onClick={handleShowPasswordButton}
+                        className={styles.showButton}
+                    >
+                        {showPassword ? (
+                            <EyeCloseIcon className={styles.showIcon} />
+                        ) : (
+                            <EyeIcon className={styles.showIcon} />
+                        )}
+                    </button>
                 }
                 ref={mergeRefs(localRef, ref)}
                 {...props}
