@@ -10,4 +10,8 @@
 
 .modal {
     max-width: 320px;
+    transform: translateY(-20px);
+    transition:
+        opacity 0.4s ease-out,
+        transform 0.4s ease-out;
 }

@@ -8,6 +8,7 @@ import { Modal } from '@shared/modal';
 import { Button } from '@shared/button';
 
 import styles from './AuthModal.module.scss';
+import clsx from 'clsx';
 
 export const AuthModal: FC = () => {
     const isOpen = useModalStore((state) => state.isOpen);
@@ -18,7 +19,12 @@ export const AuthModal: FC = () => {
         <div className={styles.wrapper}>
             <Button onClick={toggleOpen}>Authorization</Button>
 
-            <Modal open={isOpen} onClose={toggleOpen} className={styles.modal}>
+            <Modal
+                open={isOpen}
+                onClose={toggleOpen}
+                className={clsx(styles.modal, isOpen ? styles.open : styles.closed)}
+                transition
+            >
                 <Fieldset>
                     <h1>Log in</h1>
 
