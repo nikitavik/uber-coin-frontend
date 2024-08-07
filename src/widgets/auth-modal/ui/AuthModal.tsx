@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { useModalStore } from '@app/providers/StoreProvider/config/store';
+import { useModalStore } from '../providers/StoreProvider/config/store';
 
 import { TextField, TextFieldPassword } from '@shared/text-field';
 import { Fieldset } from '@shared/fieldset';
