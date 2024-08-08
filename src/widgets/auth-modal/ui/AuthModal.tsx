@@ -1,4 +1,6 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
+
+import { useModalStore } from '../providers/StoreProvider/config/store';
 
 import { TextField, TextFieldPassword } from '@shared/text-field';
 import { Fieldset } from '@shared/fieldset';
@@ -8,15 +10,14 @@ import { Button } from '@shared/button';
 import styles from './AuthModal.module.scss';
 
 export const AuthModal: FC = () => {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
-
-    const toggleOpen = () => setIsOpen((prevOpen) => !prevOpen);
+    const isOpen = useModalStore((state) => state.isOpen);
+    const toggleOpen = useModalStore((state) => state.setIsOpen);
 
     return (
         <div className={styles.wrapper}>
             <Button onClick={toggleOpen}>Authorization</Button>
 
-            <Modal open={isOpen} onClose={toggleOpen} className={styles.modal}>
+            <Modal open={isOpen} onClose={toggleOpen} className={styles.modal} transition>
                 <Fieldset>
                     <h1>Log in</h1>
 
