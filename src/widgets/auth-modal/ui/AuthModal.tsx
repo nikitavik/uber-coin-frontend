@@ -13,7 +13,6 @@ export const AuthModal: FC = () => {
     const isOpen = useModalStore((state) => state.isOpen);
     const toggleOpen = useModalStore((state) => state.setIsOpen);
 
-    console.log(isOpen);
     return (
         <div className={styles.wrapper}>
             <Button onClick={toggleOpen}>Authorization</Button>

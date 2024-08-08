@@ -10,7 +10,6 @@
 .label {
     color: var(--color-base);
     font-weight: var(--font-weight-medium);
-    cursor: pointer;
 
     &::first-letter {
         text-transform: uppercase;
