@@ -9,6 +9,6 @@ export const useModalStore = create<ModalState>()((set) => ({
     isOpen: false,
     setIsOpen: () =>
         set((state) => ({
-            isOpen: !state.isOpen ? (state.isOpen = true) : (state.isOpen = false),
+            isOpen: !state.isOpen,
         })),
 }));
