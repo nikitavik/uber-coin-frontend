@@ -1,8 +1,5 @@
-@use '@app/styles/variables' as vars;
-
 .financeText {
     font-weight: var(--font-weight-bold);
-    font-size: vars.$font-regular;
 }
 
 .finance {

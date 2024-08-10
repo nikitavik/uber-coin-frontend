@@ -6,7 +6,7 @@ import { RootPageLayout } from '@pages/root-page';
 export const App: FC = () => {
     return (
         <RootPage>
-            <RootPageLayout>Root</RootPageLayout>
+            <RootPageLayout />
         </RootPage>
     );
 };

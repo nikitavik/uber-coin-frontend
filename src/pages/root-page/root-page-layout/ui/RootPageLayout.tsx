@@ -1,4 +1,6 @@
 import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
+import { BudgetBar } from '@widgets/budget-bar';
+
 import styles from './RootPageLayout.module.scss';
 
 type RootPageLayoutProps = {
@@ -10,6 +12,7 @@ export const RootPageLayout: FC<RootPageLayoutProps> = (props) => {
 
     return (
         <div {...restProps} className={styles.layout}>
+            <BudgetBar />
             {children}
         </div>
     );

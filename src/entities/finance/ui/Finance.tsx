@@ -4,7 +4,7 @@ import styles from './Finance.module.scss';
 
 type FinanceProps = {
     children?: ReactNode;
-    financeType: 'Expenses' | 'Balance' | 'Incomes';
+    financeType: 'Expenses' | 'Balance' | 'Incomes' | string;
     deposit: string;
 } & PropsWithChildren<ComponentPropsWithoutRef<'button'>>;
 
