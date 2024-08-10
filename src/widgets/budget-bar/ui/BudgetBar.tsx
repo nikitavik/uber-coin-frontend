@@ -1,6 +1,7 @@
 import { FC, useState, useRef, FocusEvent } from 'react';
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import { Finance } from '@entities/finance';
+import { TextField } from '@shared/text-field';
 
 import styles from './BudgetBar.module.scss';
 
@@ -35,7 +36,14 @@ export const BudgetBar: FC = () => {
                 ))}
                 {isOpen && (
                     <TabPanels className={styles.tabPanels}>
-                        <TabPanel className={styles.tabPanel}>Content 1</TabPanel>
+                        <TabPanel className={styles.tabPanel}>
+                            <>
+                                <TextField label="label" />
+                                <TextField label="label" />
+                                <TextField label="label" />
+                                <TextField label="label" />
+                            </>
+                        </TabPanel>
                         <TabPanel className={styles.tabPanel}>Content 2</TabPanel>
                         <TabPanel className={styles.tabPanel}>Content 3</TabPanel>
                     </TabPanels>

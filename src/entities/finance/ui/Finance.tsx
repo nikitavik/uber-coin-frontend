@@ -6,7 +6,7 @@ type FinanceProps = {
     children?: ReactNode;
     financeType: 'Expenses' | 'Balance' | 'Incomes' | string;
     deposit: string;
-} & PropsWithChildren<ComponentPropsWithoutRef<'button'>>;
+} & PropsWithChildren<ComponentPropsWithoutRef<'div'>>;
 
 export const Finance: FC<FinanceProps> = (props) => {
     const { children, financeType, deposit, ...restProps } = props;
@@ -19,8 +19,8 @@ export const Finance: FC<FinanceProps> = (props) => {
     );
 
     return (
-        <button className={styles.finance} {...restProps} type="button">
+        <div className={styles.finance} {...restProps}>
             {innerContent}
-        </button>
+        </div>
     );
 };

@@ -1,12 +1,4 @@
-@use './utils' as utils;
-
 // Transitions
 $transition-default-duration: 0.25s !default;
 $transition-default-timing-function: ease !default;
 $transition-default: $transition-default-duration $transition-default-timing-function !default;
-
-//Variables
-$font-xsmall: utils.to-rem(12px);
-$font-small: utils.to-rem(14px);
-$font-regular: utils.to-rem(16px);
-$font-large: utils.to-rem(18px);
