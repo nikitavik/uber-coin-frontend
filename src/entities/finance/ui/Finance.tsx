@@ -1,12 +1,26 @@
-import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
-import styles from './RootPage.module.scss';
+import { FC, ComponentPropsWithoutRef, PropsWithChildren, ReactNode } from 'react';
 
-type RootPageLayoutProps = {
+import styles from './Finance.module.scss';
+
+type FinanceProps = {
     children?: ReactNode;
-} & PropsWithChildren<ComponentPropsWithoutRef<'div'>>;
+    financeType: 'Expenses' | 'Balance' | 'Incomes';
+    deposit: string;
+} & PropsWithChildren<ComponentPropsWithoutRef<'button'>>;
 
-export const RootPageLayout: FC<RootPageLayoutProps> = (props) => {
-    const { children, ...restProps } = props;
+export const Finance: FC<FinanceProps> = (props) => {
+    const { children, financeType, deposit, ...restProps } = props;
 
-    return <div {...restProps} className={styles.layout}></div>;
+    const innerContent = (
+        <>
+            <span className={styles.financeText}>{financeType}</span>
+            <span className={styles.financeText}>{deposit}</span>
+        </>
+    );
+
+    return (
+        <button className={styles.finance} {...restProps} type="button">
+            {innerContent}
+        </button>
+    );
 };
