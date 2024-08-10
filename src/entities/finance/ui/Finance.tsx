@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
-import styles from './RootPageLayout.module.scss';
+import styles from './RootPage.module.scss';
 
 type RootPageLayoutProps = {
     children?: ReactNode;
@@ -8,9 +8,5 @@ type RootPageLayoutProps = {
 export const RootPageLayout: FC<RootPageLayoutProps> = (props) => {
     const { children, ...restProps } = props;
 
-    return (
-        <div {...restProps} className={styles.layout}>
-            {children}
-        </div>
-    );
+    return <div {...restProps} className={styles.layout}></div>;
 };
