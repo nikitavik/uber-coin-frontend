@@ -1,5 +1,23 @@
 .layout {
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr;
+    grid-template:
+        'a b d'
+        'a c d';
+}
+
+.sidebarLeft {
+    grid-area: a;
+}
+
+.budget {
+    grid-area: b;
+}
+
+.account {
+    grid-area: c;
+}
+
+.sidebarRight {
+    grid-area: d;
 }

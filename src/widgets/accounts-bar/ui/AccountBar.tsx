@@ -7,41 +7,45 @@ import { Income } from '@entities/account/assets/icons/income';
 
 import styles from './AccountBar.module.scss';
 
-export const AccountBar: FC = () => {
+type AccountBarProps = { className?: string };
+
+export const AccountBar: FC<AccountBarProps> = ({ className }) => {
     const accountsNames = ['Tinkov', 'Sber', 'Alpha'];
     const deposits = ['25 975,30 $', '30 975,30 $', '50 975,30 $'];
     const { accountsName, deposit } = { accountsName: 'Income', deposit: '25 975,30 $' };
 
     return (
-        <Bar
-            tabs={
-                <>
-                    {accountsNames.map((value, index) => (
+        <div className={className}>
+            <Bar
+                tabs={
+                    <>
+                        {accountsNames.map((value, index) => (
+                            <Tab>
+                                <Account accountName={value} deposit={deposits[index]}>
+                                    <CreditCard />
+                                </Account>
+                            </Tab>
+                        ))}
                         <Tab>
-                            <Account accountName={value} deposit={deposits[index]}>
-                                <CreditCard />
+                            <Account accountName={accountsName} deposit={deposit}>
+                                <Income />
                             </Account>
                         </Tab>
-                    ))}
-                    <Tab>
-                        <Account accountName={accountsName} deposit={deposit}>
-                            <Income />
-                        </Account>
-                    </Tab>
-                </>
-            }
-            tabPanels={
-                <>
-                    {accountsNames.map((value) => (
+                    </>
+                }
+                tabPanels={
+                    <>
+                        {accountsNames.map((value) => (
+                            <TabPanel
+                                className={styles.tabPanel}
+                            >{`Здесь можно проводить манипуляции со счетом ${value}`}</TabPanel>
+                        ))}
                         <TabPanel
                             className={styles.tabPanel}
-                        >{`Здесь можно проводить манипуляции со счетом ${value}`}</TabPanel>
-                    ))}
-                    <TabPanel
-                        className={styles.tabPanel}
-                    >{`Здесь можно проводить манипуляции со счетом ${accountsName}`}</TabPanel>
-                </>
-            }
-        />
+                        >{`Здесь можно проводить манипуляции со счетом ${accountsName}`}</TabPanel>
+                    </>
+                }
+            />
+        </div>
     );
 };
