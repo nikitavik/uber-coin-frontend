@@ -2,6 +2,8 @@ import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'reac
 import { BudgetBar } from '@widgets/budget-bar';
 import { AccountBar } from '@widgets/accounts-bar';
 import { Sidebar } from '@shared/sidebar';
+import clsx from 'clsx';
+
 import styles from './RootPageLayout.module.scss';
 
 type RootPageLayoutProps = {
@@ -13,10 +15,12 @@ export const RootPageLayout: FC<RootPageLayoutProps> = (props) => {
 
     return (
         <div {...restProps} className={styles.layout}>
-            <Sidebar className={styles.sidebarLeft} />
-            <BudgetBar className={styles.budget} />
-            <AccountBar className={styles.account} />
-            <Sidebar className={styles.sidebarRight} />
+            <Sidebar className={clsx(styles.sidebar, styles.sidebarLeft)} />
+            <main className={styles.main}>
+                <BudgetBar className={styles.budget} />
+                <AccountBar className={styles.account} />
+            </main>
+            <Sidebar className={clsx(styles.sidebar, styles.sidebarRight)} />
             {children}
         </div>
     );
