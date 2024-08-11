@@ -1,15 +1,14 @@
-import { FC, ComponentPropsWithoutRef, PropsWithChildren, ReactNode } from 'react';
+import { FC, ComponentProps } from 'react';
 
 import styles from './Finance.module.scss';
 
 type FinanceProps = {
-    children?: ReactNode;
     financeType: 'Expenses' | 'Balance' | 'Incomes' | string;
     deposit: string;
-} & PropsWithChildren<ComponentPropsWithoutRef<'div'>>;
+} & ComponentProps<'div'>;
 
 export const Finance: FC<FinanceProps> = (props) => {
-    const { children, financeType, deposit, ...restProps } = props;
+    const { financeType, deposit, ...restProps } = props;
 
     const innerContent = (
         <>

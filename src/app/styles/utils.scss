@@ -5,6 +5,10 @@
     @return math.div($size, 16px) * 1rem;
 }
 
+$transition-default-duration: 0.25s !default;
+$transition-default-timing-function: ease !default;
+$transition-default: $transition-default-duration $transition-default-timing-function !default;
+
 @mixin set-transition(
     $properties: (),
     $duration: vars.$transition-default-duration,
