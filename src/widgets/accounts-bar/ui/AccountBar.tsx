@@ -2,13 +2,15 @@ import { FC } from 'react';
 import { Bar } from '@shared/bar';
 import { Tab, TabPanel } from '@headlessui/react';
 import { Account } from '@entities/account';
+import { CreditCard } from '@entities/account/assets/icons/credit-card';
+import { Income } from '@entities/account/assets/icons/income';
 
 import styles from './AccountBar.module.scss';
-import { CreditCard } from '@entities/account/assets/icons/credit-card';
 
 export const AccountBar: FC = () => {
     const accountsNames = ['Tinkov', 'Sber', 'Alpha'];
     const deposits = ['25 975,30 $', '30 975,30 $', '50 975,30 $'];
+    const { accountsName, deposit } = { accountsName: 'Income', deposit: '25 975,30 $' };
 
     return (
         <Bar
@@ -21,6 +23,11 @@ export const AccountBar: FC = () => {
                             </Account>
                         </Tab>
                     ))}
+                    <Tab>
+                        <Account accountName={accountsName} deposit={deposit}>
+                            <Income />
+                        </Account>
+                    </Tab>
                 </>
             }
             tabPanels={
@@ -30,6 +37,9 @@ export const AccountBar: FC = () => {
                             className={styles.tabPanel}
                         >{`Здесь можно проводить манипуляции со счетом ${value}`}</TabPanel>
                     ))}
+                    <TabPanel
+                        className={styles.tabPanel}
+                    >{`Здесь можно проводить манипуляции со счетом ${accountsName}`}</TabPanel>
                 </>
             }
         />
