@@ -15,12 +15,12 @@ export const RootPageLayout: FC<RootPageLayoutProps> = (props) => {
 
     return (
         <div {...restProps} className={styles.layout}>
-            <Sidebar className={clsx(styles.sidebar, styles.sidebarLeft)} />
+            <Sidebar className={clsx(styles.sidebarLayout, styles.sidebarLeft)} />
             <main className={styles.main}>
                 <BudgetBar className={styles.budget} />
                 <AccountBar className={styles.account} />
             </main>
-            <Sidebar className={clsx(styles.sidebar, styles.sidebarRight)} />
+            <Sidebar className={clsx(styles.sidebarLayout, styles.sidebarRight)} />
             {children}
         </div>
     );
