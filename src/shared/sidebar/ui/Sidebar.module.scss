@@ -1,3 +1,5 @@
+@use '@app/styles/utils' as utils;
+
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -14,7 +16,11 @@
     justify-content: center;
     color: white;
     flex-direction: column;
-    width: 10rem;
+    width: 50%;
     height: 100%;
     background-color: var(--color-base);
+}
+
+.icon {
+    @include utils.set-size(1rem);
 }

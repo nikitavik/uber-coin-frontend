@@ -20,7 +20,11 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         <div className={clsx(styles.sidebar, className)} {...restProps}>
             <Menu>
                 <MenuButton onClick={() => setOpen(!isOpen)} className={styles.button}>
-                    {isOpen ? <MenuIcon /> : <MenuOpenIcon />}
+                    {isOpen ? (
+                        <MenuIcon className={styles.icon} />
+                    ) : (
+                        <MenuOpenIcon className={styles.icon} />
+                    )}
                 </MenuButton>
                 <MenuItems anchor="left" className={styles.menuItems}>
                     <MenuItem as={'div'}>Some item</MenuItem>
