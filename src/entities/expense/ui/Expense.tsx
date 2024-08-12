@@ -1,6 +1,5 @@
 import { FC, PropsWithChildren, ComponentPropsWithoutRef, ReactNode } from 'react';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
-import clsx from 'clsx';
 
 import styles from './Expense.module.scss';
 
@@ -15,7 +14,7 @@ export const Expense: FC<ExpenseProps> = (props) => {
     const { children, expenseName, deposit, className, ...restProps } = props;
 
     return (
-        <div className={clsx(styles.wrapper, className)} {...restProps}>
+        <div className={className} {...restProps}>
             <Popover className={styles.expense}>
                 <span className={styles.expenseName}>{expenseName}</span>
                 <PopoverButton className={styles.icon}>{children}</PopoverButton>
