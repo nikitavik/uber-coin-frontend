@@ -1,0 +1,41 @@
+@use '@app/styles/utils' as utils;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.expense {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.expenseName {
+    color: var(--color-dark-charcoal);
+}
+
+.icon {
+    @include utils.set-size(2rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--color-base);
+}
+
+.deposit {
+    color: var(--color-base);
+}
+
+.popoverPanel {
+    width: 100%;
+    height: 5rem;
+}
