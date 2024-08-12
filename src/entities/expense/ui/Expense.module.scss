@@ -36,6 +36,9 @@
 }
 
 .popoverPanel {
-    width: 100%;
+    @include utils.set-size(5rem);
+
     height: 5rem;
+    background-color: var(--color-base);
+    color: var(--background-color-base);
 }
