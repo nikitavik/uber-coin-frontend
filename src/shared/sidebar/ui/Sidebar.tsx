@@ -16,20 +16,23 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
     const [isOpen, setOpen] = useState<boolean>(false);
 
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
         <div className={clsx(styles.sidebar, className)} {...restProps}>
             <Menu>
-                <MenuButton onClick={() => setOpen(!isOpen)} className={styles.button}>
+                <MenuButton onClick={handleOpen} className={styles.button}>
                     {isOpen ? (
                         <MenuIcon className={styles.icon} />
                     ) : (
                         <MenuOpenIcon className={styles.icon} />
                     )}
                 </MenuButton>
-                <MenuItems anchor="left" className={styles.menuItems}>
+                <MenuItems anchor="left" className={styles.menuItems} onBlur={handleClose}>
                     <MenuItem as={'div'}>Some item</MenuItem>
                 </MenuItems>
             </Menu>
+
             {children}
         </div>
     );
