@@ -17,7 +17,7 @@
 }
 
 .iconWrapper {
-    @include utils.set-size(1.5rem);
+    @include utils.set-size(2rem);
 
     background-color: var(--color-base);
     border-radius: 50%;
