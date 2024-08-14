@@ -1,11 +1,4 @@
-import {
-    ComponentPropsWithoutRef,
-    FC,
-    PropsWithChildren,
-    ReactNode,
-    useState,
-    useRef,
-} from 'react';
+import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import MenuIcon from '../assets/menu.svg?react';
 import MenuOpenIcon from '../assets/menu_open.svg?react';
@@ -21,36 +14,19 @@ type SidebarProps = {
 export const Sidebar: FC<SidebarProps> = (props) => {
     const { children, className, ...restProps } = props;
 
-    const [isOpen, setOpen] = useState<boolean>(false);
-    const buttonRef = useRef<HTMLButtonElement>(null);
-
-    const handleOpen = () => setOpen(true);
-    const handleBlur = () => {
-        if (buttonRef.current && !buttonRef.current.contains(document.activeElement)) {
-            setOpen(false);
-        }
-    };
     return (
-        <div className={clsx(styles.sidebar, className)} onBlur={handleBlur} {...restProps}>
+        <div className={clsx(styles.sidebar, className)} {...restProps}>
             <Popover>
                 {({ open }) => (
                     <>
-                        <PopoverButton
-                            ref={buttonRef}
-                            onClick={() => setOpen(!isOpen)}
-                            className={styles.button}
-                        >
+                        <PopoverButton className={styles.button}>
                             {open ? (
                                 <MenuIcon className={styles.icon} />
                             ) : (
                                 <MenuOpenIcon className={styles.icon} />
                             )}
                         </PopoverButton>
-                        <PopoverPanel
-                            anchor="left"
-                            className={styles.menuItems}
-                            onClick={handleOpen}
-                        >
+                        <PopoverPanel anchor="left" className={styles.menuItems}>
                             Some item
                         </PopoverPanel>
                     </>
