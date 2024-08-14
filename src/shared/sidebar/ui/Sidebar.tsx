@@ -26,11 +26,9 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
     const handleOpen = () => setOpen(true);
     const handleBlur = () => {
-        setTimeout((event: MouseEvent) => {
-            if (buttonRef.current && !buttonRef.current.contains(document.activeElement)) {
-                setOpen(false);
-            }
-        }, 0);
+        if (buttonRef.current && !buttonRef.current.contains(document.activeElement)) {
+            setOpen(false);
+        }
     };
     return (
         <div className={clsx(styles.sidebar, className)} onBlur={handleBlur} {...restProps}>
