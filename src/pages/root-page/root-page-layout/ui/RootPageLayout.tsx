@@ -23,7 +23,10 @@ export const RootPageLayout: FC<RootPageLayoutProps> = (props) => {
                 <AccountBar className={styles.account} />
                 <ExpensesPanel />
             </main>
-            <Sidebar className={clsx(styles.sidebarLayout, styles.sidebarRight)} />
+            <Sidebar
+                sideBarPosition="right"
+                className={clsx(styles.sidebarLayout, styles.sidebarRight)}
+            />
             {children}
         </div>
     );
