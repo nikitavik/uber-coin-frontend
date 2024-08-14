@@ -36,7 +36,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
                         <PopoverBackdrop transition className={styles.backdrop} />
                         <PopoverPanel
                             transition
-                            anchor="left"
+                            anchor={sideBarPosition === 'left' ? 'right' : 'left'}
                             className={clsx(
                                 styles.menuItems,
                                 positionClassNameByPosition[sideBarPosition]

@@ -23,20 +23,18 @@
     justify-content: center;
     color: var(--background-color-base);
     flex-direction: column;
+    overflow: hidden;
     width: 30%;
     height: 100%;
     background-color: var(--color-base);
-    overflow: hidden;
 }
 
 .left {
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
-    overflow: hidden;
 
     &.menuItems {
         &[data-closed] {
-            overflow: hidden;
             transform: translate(-50%);
             opacity: 0;
         }
@@ -50,9 +48,9 @@
 
     &.menuItems {
         &[data-closed] {
+            overflow: hidden;
             transform: translate(50%);
             opacity: 0;
-            overflow: hidden;
         }
     }
 }
