@@ -33,20 +33,28 @@ export const Sidebar: FC<SidebarProps> = (props) => {
     return (
         <div className={clsx(styles.sidebar, className)} onBlur={handleBlur} {...restProps}>
             <Popover>
-                <PopoverButton
-                    ref={buttonRef}
-                    onClick={() => setOpen(!isOpen)}
-                    className={styles.button}
-                >
-                    {isOpen ? (
-                        <MenuIcon className={styles.icon} />
-                    ) : (
-                        <MenuOpenIcon className={styles.icon} />
-                    )}
-                </PopoverButton>
-                <PopoverPanel anchor="left" className={styles.menuItems} onClick={handleOpen}>
-                    Some item
-                </PopoverPanel>
+                {({ open }) => (
+                    <>
+                        <PopoverButton
+                            ref={buttonRef}
+                            onClick={() => setOpen(!isOpen)}
+                            className={styles.button}
+                        >
+                            {open ? (
+                                <MenuIcon className={styles.icon} />
+                            ) : (
+                                <MenuOpenIcon className={styles.icon} />
+                            )}
+                        </PopoverButton>
+                        <PopoverPanel
+                            anchor="left"
+                            className={styles.menuItems}
+                            onClick={handleOpen}
+                        >
+                            Some item
+                        </PopoverPanel>
+                    </>
+                )}
             </Popover>
             {children}
         </div>
