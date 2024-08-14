@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode, useState } from 'react';
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import MenuIcon from '../assets/menu.svg?react';
 import MenuOpenIcon from '../assets/menu_open.svg?react';
 import clsx from 'clsx';
@@ -16,23 +16,22 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
     const [isOpen, setOpen] = useState<boolean>(false);
 
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const handleOpen = () => setOpen(!isOpen);
+
     return (
         <div className={clsx(styles.sidebar, className)} {...restProps}>
-            <Menu>
-                <MenuButton onClick={handleOpen} className={styles.button}>
+            <Popover>
+                <PopoverButton onClick={handleOpen} className={styles.button}>
                     {isOpen ? (
                         <MenuIcon className={styles.icon} />
                     ) : (
                         <MenuOpenIcon className={styles.icon} />
                     )}
-                </MenuButton>
-                <MenuItems anchor="left" className={styles.menuItems} onBlur={handleClose}>
-                    <MenuItem as={'div'}>Some item</MenuItem>
-                </MenuItems>
-            </Menu>
-
+                </PopoverButton>
+                <PopoverPanel anchor="left" className={styles.menuItems}>
+                    Some item
+                </PopoverPanel>
+            </Popover>
             {children}
         </div>
     );
