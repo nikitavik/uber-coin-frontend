@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { Popover, PopoverButton, PopoverPanel, PopoverBackdrop } from '@headlessui/react';
 import MenuIcon from '../assets/menu.svg?react';
 import MenuOpenIcon from '../assets/menu_open.svg?react';
 import clsx from 'clsx';
@@ -26,7 +26,8 @@ export const Sidebar: FC<SidebarProps> = (props) => {
                                 <MenuOpenIcon className={styles.icon} />
                             )}
                         </PopoverButton>
-                        <PopoverPanel anchor="left" className={styles.menuItems}>
+                        <PopoverBackdrop transition className={styles.backdrop} />
+                        <PopoverPanel transition anchor="left" className={styles.menuItems}>
                             Some item
                         </PopoverPanel>
                     </>

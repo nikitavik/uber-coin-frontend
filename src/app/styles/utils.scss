@@ -31,3 +31,14 @@ $transition-default: $transition-default-duration $transition-default-timing-fun
         height: $height;
     }
 }
+@mixin backdrop {
+    @include set-transition(opacity, ease-out, 300ms);
+
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+
+    &[data-closed] {
+        opacity: 0;
+    }
+}
