@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react';
 import { Bar } from '@shared/bar';
 import { Tab, TabPanel } from '@headlessui/react';
 import { Account } from '@entities/account';
-import { CreditCard } from '@entities/account/assets/icons/credit-card';
-import { Income } from '@entities/account/assets/icons/income';
+import CreditCard from '@entities/account/assets/icons/credit-card/credit_card.svg?react';
+import Income from '@entities/account/assets/icons/income/income.svg?react';
 import styles from './AccountBar.module.scss';
 
 type AccountBarProps = {

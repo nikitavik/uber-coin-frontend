@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, ComponentPropsWithoutRef, ReactNode } from 'react';
 import { Expense } from '@entities/expense';
-import { BurgerIcon } from '@entities/expense';
+import BurgerIcon from '@entities/expense/assets/burger.svg?react';
 import clsx from 'clsx';
 
 import styles from './ExpensesPanel.module.scss';
@@ -15,7 +15,7 @@ export const ExpensesPanel: FC<ExpensesPanelProps> = (props) => {
     const { expenseName, deposit, icon } = {
         expenseName: 'Вкусно и точка',
         deposit: '10 000 $',
-        icon: <BurgerIcon />,
+        icon: <BurgerIcon className={styles.icon} />,
     };
 
     return (
