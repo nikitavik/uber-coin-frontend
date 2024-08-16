@@ -1,4 +1,4 @@
-@use '@app/styles/global' as global;
+@use '@app/styles/variables' as vars;
 
 .financeText {
     font-weight: var(--font-weight-bold);
@@ -8,7 +8,6 @@
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
-    font-size: global.$font-regular;
     align-items: center;
     justify-content: center;
     width: 100%;

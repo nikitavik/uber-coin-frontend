@@ -1,4 +1,11 @@
+@use "./functions" as functions;
+
 // Transitions
 $transition-default-duration: 0.25s !default;
 $transition-default-timing-function: ease !default;
 $transition-default: $transition-default-duration $transition-default-timing-function !default;
+
+$font-xsmall: functions.to-rem(12px);
+$font-small: functions.to-rem(14px);
+$font-regular: functions.to-rem(16px);
+$font-large: functions.to-rem(18px);
