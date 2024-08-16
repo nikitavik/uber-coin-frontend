@@ -8,69 +8,8 @@
     align-items: center;
     justify-content: center;
     background-color: var(--color-base);
-
-    & div[data-headlessui-state] {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.menuItems {
-    @include utils.set-transition((opacity, transform), ease-out, 300ms);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--background-color-base);
-    flex-direction: column;
-    overflow: hidden;
-    width: 30%;
-    height: 100%;
-    background-color: var(--color-base);
-}
-
-.left {
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-
-    &.menuItems {
-        &[data-closed] {
-            transform: translate(-50%);
-            opacity: 0;
-        }
-    }
-}
-
-.right {
-    border-top-left-radius: 2rem;
-    border-bottom-left-radius: 2rem;
-    overflow: hidden;
-
-    &.menuItems {
-        &[data-closed] {
-            overflow: hidden;
-            transform: translate(50%);
-            opacity: 0;
-        }
-    }
 }
 
 .icon {
     @include utils.set-size(1rem);
-}
-
-.button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-
-    &[data-focus] {
-        border: 1px solid transparent;
-    }
-}
-
-.backdrop {
-    @include utils.backdrop();
 }
