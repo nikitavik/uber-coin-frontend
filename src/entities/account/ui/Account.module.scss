@@ -11,6 +11,8 @@
     height: 100%;
     border: 1px solid transparent;
     cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .accountName {

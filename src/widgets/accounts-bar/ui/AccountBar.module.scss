@@ -3,3 +3,8 @@
 .tabPanel {
     @include utils.tab-panel;
 }
+
+.accountBar {
+    max-width: 100%;
+    overflow-x: auto;
+}

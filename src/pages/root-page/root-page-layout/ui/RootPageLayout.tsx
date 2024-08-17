@@ -15,12 +15,12 @@ export const RootPageLayout: FC<RootPageLayoutProps> = (props) => {
 
     return (
         <div {...restProps} className={styles.layout}>
-            <Sidebar className={styles.sidebarLeft} />
             <main className={styles.main}>
-                <BudgetBar />
-                <AccountBar />
-                <ExpensesPanel />
+                <BudgetBar className={styles.budgetBar} />
+                <AccountBar className={styles.account} />
+                <ExpensesPanel className={styles.expansesPanel} />
             </main>
+            <Sidebar className={styles.sidebarRight} />
             {children}
         </div>
     );

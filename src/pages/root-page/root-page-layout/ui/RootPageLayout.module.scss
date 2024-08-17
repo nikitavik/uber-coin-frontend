@@ -1,24 +1,25 @@
 .layout {
     display: grid;
-    width: 100%;
+    max-width: 100%;
+    padding: 12px 24px;
     height: 100vh;
+    justify-items: end;
     grid-template:
-        'a b d'
-        'a b d' /5% 1fr 5%;
+        'b a'
+        'b a'
+        'b a' /90% 10%;
 }
 
-.sidebarLeft {
+.sidebarRight {
     grid-area: a;
 }
 
 .main {
     display: flex;
-    align-items: center;
+    max-width: 100%;
     grid-area: b;
+    align-items: start;
     flex-direction: column;
     gap: 1.5rem;
-}
-
-.sidebarRight {
-    grid-area: d;
+    justify-content: start;
 }

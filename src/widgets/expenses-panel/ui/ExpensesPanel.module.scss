@@ -3,6 +3,7 @@
 .wrapper {
     display: grid;
     width: 100%;
+    justify-items: start;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1.5rem;
 }
