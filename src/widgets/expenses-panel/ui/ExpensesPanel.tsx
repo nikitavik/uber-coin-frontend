@@ -1,7 +1,9 @@
-import { FC, PropsWithChildren, ComponentPropsWithoutRef, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
+
+import clsx from 'clsx';
+
 import { Expense } from '@entities/expense';
 import BurgerIcon from '@entities/expense/assets/burger.svg?react';
-import clsx from 'clsx';
 
 import styles from './ExpensesPanel.module.scss';
 

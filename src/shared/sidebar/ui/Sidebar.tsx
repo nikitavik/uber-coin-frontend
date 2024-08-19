@@ -1,7 +1,8 @@
 import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
-import MenuIcon from '../assets/menu.svg?react';
+
 import clsx from 'clsx';
 
+import MenuIcon from '../assets/menu.svg?react';
 import styles from './Sidebar.module.scss';
 
 type SidebarProps = {

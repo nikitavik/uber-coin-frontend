@@ -1,4 +1,5 @@
-import { FC, PropsWithChildren, ComponentPropsWithoutRef, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
+
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 
 import styles from './Expense.module.scss';

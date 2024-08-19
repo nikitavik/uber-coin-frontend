@@ -1,10 +1,11 @@
-import { forwardRef, useState, InputHTMLAttributes, ChangeEvent, ReactNode } from 'react';
-import { Field, Input, Label } from '@headlessui/react';
+import { ChangeEvent, forwardRef, InputHTMLAttributes, ReactNode, useState } from 'react';
+
 import clsx from 'clsx';
 
-import WrongIcon from '@shared/text-field/assets/icons/wrong.svg?react';
-import CorrectIcon from '@shared/text-field/assets/icons/correct.svg?react';
+import { Field, Input, Label } from '@headlessui/react';
 import CancelIcon from '@shared/text-field/assets/icons/cancel.svg?react';
+import CorrectIcon from '@shared/text-field/assets/icons/correct.svg?react';
+import WrongIcon from '@shared/text-field/assets/icons/wrong.svg?react';
 
 import styles from './TextField.module.scss';
 

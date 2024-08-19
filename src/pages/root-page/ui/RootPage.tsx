@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
+
 import styles from './RootPage.module.scss';
 
 type RootPageProps = {

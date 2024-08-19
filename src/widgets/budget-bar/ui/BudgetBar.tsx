@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import { Bar } from '@shared/bar';
-import { Tab, TabPanel } from '@headlessui/react';
+
 import { Finance } from '@entities/finance';
+import { Tab, TabPanel } from '@headlessui/react';
+import { Bar } from '@shared/bar';
 
 import styles from './BudgetBar.module.scss';
 

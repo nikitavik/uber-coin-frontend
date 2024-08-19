@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ComponentPropsWithoutRef, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
 
 import styles from './Account.module.scss';
 

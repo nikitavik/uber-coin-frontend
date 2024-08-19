@@ -16,5 +16,13 @@
     "importOrderSortSpecifiers": true,
     "importOrderGroupNamespaceSpecifiers": true,
     "importOrderCaseInsensitive": true,
-    "importOrder": []
+    "importOrder": [
+        "^react.",
+        "<THIRD_PARTY_MODULES>",
+        "^clsx$",
+        "^@.",
+        "^((.){1,2}/).*$",
+        "^(/).*$"
+    ],
+    "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

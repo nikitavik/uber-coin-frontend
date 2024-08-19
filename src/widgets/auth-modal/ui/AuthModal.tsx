@@ -1,12 +1,11 @@
 import { FC } from 'react';
 
-import { useModalStore } from '../providers/StoreProvider/config/store';
-
-import { TextField, TextFieldPassword } from '@shared/text-field';
+import { Button } from '@shared/button';
 import { Fieldset } from '@shared/fieldset';
 import { Modal } from '@shared/modal';
-import { Button } from '@shared/button';
+import { TextField, TextFieldPassword } from '@shared/text-field';
 
+import { useModalStore } from '../providers/StoreProvider/config/store';
 import styles from './AuthModal.module.scss';
 
 export const AuthModal: FC = () => {
