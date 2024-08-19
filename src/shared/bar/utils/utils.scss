@@ -1,0 +1,13 @@
+@mixin tab-panel {
+    position: absolute;
+    color: white;
+    background-color: black;
+    display: flex;
+    padding: 2rem;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}

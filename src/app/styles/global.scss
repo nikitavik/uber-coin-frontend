@@ -1,5 +1,3 @@
-@use './utils' as utils;
-
 :root {
     --background-color-base: #fff;
     --color-base: #000;
@@ -24,11 +22,6 @@
     --background-tertiary: #e8e8e8;
     --color-invert: #fff;
     --color-zambezi: #5e5e5e;
-    --font-small-px: 14px;
-    --font-xsmall: utils.to-rem(12px);
-    --font-small: utils.to-rem(14px);
-    --font-regular: utils.to-rem(16px);
-    --font-large: utils.to-rem(18px);
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -50,4 +43,5 @@
     font-family: UberMove, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     box-sizing: border-box;
     border: none;
+    background-color: transparent;
 }

@@ -1,8 +1,9 @@
 @use 'sass:math' as math;
 @use './variables' as vars;
+@use './functions' as functions;
 
 @function to-rem($size) {
-    @return math.div($size, 16px) * 1rem;
+    @return functions.to-rem($size);
 }
 
 @mixin set-transition(
@@ -25,5 +26,17 @@
         height: $width;
     } @else {
         height: $height;
+    }
+}
+
+@mixin backdrop {
+    @include set-transition(opacity, ease-out, 300ms);
+
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+
+    &[data-closed] {
+        opacity: 0;
     }
 }
