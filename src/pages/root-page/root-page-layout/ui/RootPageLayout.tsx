@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { Container } from '@shared/container';
 import { AccountBar } from '@widgets/accounts-bar';
 import { BudgetBar } from '@widgets/budget-bar';
+import { Sidebar } from '@widgets/drawer';
 import { ExpensesPanel } from '@widgets/expenses-panel';
 import { Slider } from '@widgets/slider';
 
@@ -26,7 +27,6 @@ export const RootPageLayout: FC = () => {
                 </section>
             </main>
 
-            {/*<Sidebar />*/}
-        </Container>
+            <Sidebar className={styles.sidebarRight} /></div>
     );
 };
