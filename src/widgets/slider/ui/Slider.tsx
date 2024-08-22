@@ -1,4 +1,5 @@
 import useEmblaCarousel from 'embla-carousel-react';
+import { Card } from '@entities/card';
 import { FC } from 'react';
 import styles from './Slider.module.scss';
 
@@ -8,9 +9,15 @@ export const Slider: FC = () => {
     return (
         <div className={styles.slider} ref={emblaRef}>
             <div className={styles.container}>
-                <div className={styles.slide}>Slide 1</div>
-                <div className={styles.slide}>Slide 2</div>
-                <div className={styles.slide}>Slide 3</div>
+                <div className={styles.slide}>
+                    <Card balance="25 975,30 $" outcome="25 975,30 $" income="25 975,30 $" />
+                </div>
+                <div className={styles.slide}>
+                    <Card balance="30 975,30 $" outcome="25 975,30 $" income="25 975,30 $" />
+                </div>
+                <div className={styles.slide}>
+                    <Card balance="50 975,30 $" outcome="25 975,30 $" income="25 975,30 $" />
+                </div>
             </div>
         </div>
     );

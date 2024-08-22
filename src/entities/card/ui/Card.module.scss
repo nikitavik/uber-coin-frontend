@@ -1,0 +1,43 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-base);
+    color: var(--background-color-base);
+    border-radius: 0.5rem;
+    width: 20rem;
+    height: 10rem;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.balanceList {
+    display: flex;
+    gap: 0.2rem;
+    flex-direction: column;
+}
+
+.text {
+    font-size: 0.8rem;
+}
+
+.balance {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+}
+
+.finances {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+}
+
+.financesIncome {
+    color: var(--color-green);
+    margin-left: 0.2rem;
+}
+
+.financesOutcome {
+    color: var(--color-red);
+    margin-left: 0.2rem;
+}
