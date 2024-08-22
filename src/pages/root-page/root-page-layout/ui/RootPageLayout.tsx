@@ -4,6 +4,7 @@ import { Sidebar } from '@shared/sidebar';
 import { AccountBar } from '@widgets/accounts-bar';
 import { BudgetBar } from '@widgets/budget-bar';
 import { ExpensesPanel } from '@widgets/expenses-panel';
+import { Slider } from '@widgets/slider';
 
 import styles from './RootPageLayout.module.scss';
 
@@ -20,6 +21,7 @@ export const RootPageLayout: FC<RootPageLayoutProps> = (props) => {
                 <BudgetBar className={styles.budgetBar} />
                 <AccountBar className={styles.account} />
                 <ExpensesPanel className={styles.expansesPanel} />
+                <Slider />
             </main>
             <Sidebar className={styles.sidebarRight} />
             {children}
