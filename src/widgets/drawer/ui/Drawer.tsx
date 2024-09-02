@@ -1,6 +1,4 @@
-import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode, useState } from 'react';
-
-import clsx from 'clsx';
+import { FC, PropsWithChildren, useState } from 'react';
 
 import { Modal } from '@shared/modal';
 
@@ -8,17 +6,12 @@ import MenuIcon from '../assets/menu.svg?react';
 import OpenMenuIcon from '../assets/menu_open.svg?react';
 import styles from './Drawer.module.scss';
 
-type DrawerProps = {
-    children?: ReactNode;
-    className?: string;
-} & PropsWithChildren<ComponentPropsWithoutRef<'div'>>;
-
-export const Drawer: FC<DrawerProps> = (props) => {
-    const { children, className, ...restProps } = props;
+export const Drawer: FC<PropsWithChildren> = (props) => {
+    const { children } = props;
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
-        <div className={clsx(styles.drawer, className)} {...restProps}>
+        <>
             <button type="button" onClick={() => setIsOpen(true)} className={styles.button}>
                 {isOpen ? (
                     <MenuIcon className={styles.icon} />
@@ -26,9 +19,10 @@ export const Drawer: FC<DrawerProps> = (props) => {
                     <OpenMenuIcon className={styles.icon} />
                 )}
             </button>
+
             <Modal open={isOpen} onClose={setIsOpen} className={styles.drawerModal} transition>
                 {children}
             </Modal>
-        </div>
+        </>
     );
 };
