@@ -25,9 +25,10 @@
     margin-bottom: 0.8rem;
     padding: 0.8rem;
     border-radius: 2rem 0 0 2rem;
+    background-color: var(--color-base);
 
     &[data-open] {
-        background-color: var(--color-base);
+        opacity: 1;
     }
 
     &[data-closed] {
