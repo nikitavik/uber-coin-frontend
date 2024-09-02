@@ -1,0 +1,18 @@
+$max-width: 1440px !default;
+$padding-inline: 80px !default;
+
+.root {
+    box-sizing: content-box;
+    margin-inline: auto;
+    max-width: $max-width;
+
+    &.isExpandedSize {
+        max-width: none;
+    }
+}
+
+.inner {
+    --container-inner-padding-inline: #{$padding-inline};
+
+    padding-inline: var(--container-inner-padding-inline);
+}

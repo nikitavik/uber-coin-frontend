@@ -1,6 +1,8 @@
 import useEmblaCarousel from 'embla-carousel-react';
-import { Card } from '@entities/card';
 import { FC } from 'react';
+
+import { Card } from '@entities/card';
+
 import styles from './Slider.module.scss';
 
 export const Slider: FC = () => {
