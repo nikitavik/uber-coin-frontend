@@ -1,13 +1,12 @@
-import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
-
 import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode, useState } from 'react';
-import { Modal } from '@shared/modal';
-import MenuIcon from '../assets/menu.svg?react';
-import OpenMenuIcon from '../assets/menu_open.svg?react';
+
 import clsx from 'clsx';
 
+import { Modal } from '@shared/modal';
+
 import MenuIcon from '../assets/menu.svg?react';
-import styles from './Sidebar.module.scss';
+import OpenMenuIcon from '../assets/menu_open.svg?react';
+import styles from './Drawer.module.scss';
 
 type DrawerProps = {
     children?: ReactNode;

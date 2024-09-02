@@ -2,10 +2,9 @@ import { FC } from 'react';
 
 import { Container } from '@shared/container';
 import { AccountBar } from '@widgets/accounts-bar';
-import { BudgetBar } from '@widgets/budget-bar';
-import { Sidebar } from '@widgets/drawer';
-import { Drawer } from '@widgets/drawer';
 import { AuthModal } from '@widgets/auth-modal';
+import { BudgetBar } from '@widgets/budget-bar';
+import { Drawer } from '@widgets/drawer';
 import { ExpensesPanel } from '@widgets/expenses-panel';
 import { Slider } from '@widgets/slider';
 
@@ -29,10 +28,9 @@ export const RootPageLayout: FC = () => {
                 </section>
             </main>
 
-            <Sidebar className={styles.sidebarRight} /></div>
             <Drawer className={styles.sidebarRight}>
                 <AuthModal />
             </Drawer>
-        </div>
+        </Container>
     );
 };
