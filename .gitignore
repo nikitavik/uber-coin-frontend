@@ -3,5 +3,6 @@
 .idea/
 .env
 .stylelintcache
+tsconfig.tsbuildinfo
 
 *storybook.log

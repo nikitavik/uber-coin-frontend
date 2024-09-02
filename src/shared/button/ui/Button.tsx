@@ -1,7 +1,8 @@
-import { FC, ComponentPropsWithoutRef, PropsWithChildren } from 'react';
-import { Button as ButtonHeadless } from '@headlessui/react';
+import { ComponentPropsWithoutRef, FC, PropsWithChildren } from 'react';
+
 import clsx from 'clsx';
 
+import { Button as ButtonHeadless } from '@headlessui/react';
 import { Spinner } from '@shared/spinner';
 
 import styles from './Button.module.scss';

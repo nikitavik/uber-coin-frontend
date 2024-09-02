@@ -1,7 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import '@app/styles/global.scss';
 import { Button } from '@shared/button';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
     component: Button,

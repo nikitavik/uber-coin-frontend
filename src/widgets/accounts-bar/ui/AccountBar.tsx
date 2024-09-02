@@ -1,11 +1,13 @@
 import { FC, ReactNode } from 'react';
-import { Bar } from '@shared/bar';
-import { Tab, TabPanel } from '@headlessui/react';
-import { Account } from '@entities/account';
-import CreditCard from '@entities/account/assets/icons/credit-card/credit_card.svg?react';
-import styles from './AccountBar.module.scss';
 
 import clsx from 'clsx';
+
+import { Account } from '@entities/account';
+import CreditCard from '@entities/account/assets/icons/credit-card/credit_card.svg?react';
+import { Tab, TabPanel } from '@headlessui/react';
+import { Bar } from '@shared/bar';
+
+import styles from './AccountBar.module.scss';
 
 type AccountBarProps = {
     children?: ReactNode;

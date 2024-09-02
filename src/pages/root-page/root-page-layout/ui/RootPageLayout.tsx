@@ -1,7 +1,8 @@
 import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
-import { BudgetBar } from '@widgets/budget-bar';
-import { AccountBar } from '@widgets/accounts-bar';
+
 import { Sidebar } from '@shared/sidebar';
+import { AccountBar } from '@widgets/accounts-bar';
+import { BudgetBar } from '@widgets/budget-bar';
 import { ExpensesPanel } from '@widgets/expenses-panel';
 
 import styles from './RootPageLayout.module.scss';

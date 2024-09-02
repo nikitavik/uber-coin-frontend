@@ -1,4 +1,5 @@
-import { FC, useState, useRef, FocusEvent, PropsWithChildren, ReactNode } from 'react';
+import { FC, FocusEvent, PropsWithChildren, ReactNode, useRef, useState } from 'react';
+
 import { TabGroup, TabList, TabPanels } from '@headlessui/react';
 
 import styles from './Bar.module.scss';

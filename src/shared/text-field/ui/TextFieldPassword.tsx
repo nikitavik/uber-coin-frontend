@@ -1,11 +1,9 @@
-import { forwardRef, useState, InputHTMLAttributes, useRef } from 'react';
 import mergeRefs from 'merge-refs';
-
-import { TextField, type TextFieldProps } from './TextField';
+import { forwardRef, InputHTMLAttributes, useRef, useState } from 'react';
 
 import EyeCloseIcon from '../assets/icons/eye_close.svg?react';
 import EyeIcon from '../assets/icons/eye_open.svg?react';
-
+import { TextField, type TextFieldProps } from './TextField';
 import styles from './TextField.module.scss';
 
 type TextFieldPasswordProps = TextFieldProps & InputHTMLAttributes<HTMLInputElement>;
