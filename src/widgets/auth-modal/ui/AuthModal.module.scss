@@ -10,4 +10,9 @@
 
 .modal {
     max-width: 320px;
+
+    &[data-closed] {
+        transform: scale(85%);
+        opacity: 0;
+    }
 }
