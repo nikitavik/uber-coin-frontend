@@ -1,25 +1,21 @@
 .layout {
-    display: grid;
     max-width: 100%;
-    padding: 12px 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    justify-items: end;
-    grid-template:
-        'b a'
-        'b a'
-        'b a' /90% 10%;
-}
-
-.sidebarRight {
-    grid-area: a;
 }
 
 .main {
-    display: flex;
-    max-width: 100%;
-    grid-area: b;
-    align-items: start;
-    flex-direction: column;
+    padding: 12px 24px;
+    display: grid;
     gap: 1.5rem;
-    justify-content: start;
+    grid-template-columns: 320px 1fr;
+    flex-grow: 1;
+}
+
+.mainSection {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }

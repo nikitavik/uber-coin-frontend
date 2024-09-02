@@ -1,28 +1,32 @@
-import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
+import { FC } from 'react';
 
-import { Sidebar } from '@shared/sidebar';
+import { Container } from '@shared/container';
 import { AccountBar } from '@widgets/accounts-bar';
 import { BudgetBar } from '@widgets/budget-bar';
 import { ExpensesPanel } from '@widgets/expenses-panel';
+import { Slider } from '@widgets/slider';
 
 import styles from './RootPageLayout.module.scss';
 
-type RootPageLayoutProps = {
-    children?: ReactNode;
-} & PropsWithChildren<ComponentPropsWithoutRef<'div'>>;
-
-export const RootPageLayout: FC<RootPageLayoutProps> = (props) => {
-    const { children, ...restProps } = props;
-
+export const RootPageLayout: FC = () => {
     return (
-        <div {...restProps} className={styles.layout}>
+        <Container classes={{ root: styles.layout }}>
+            <header>
+                <BudgetBar />
+            </header>
+
             <main className={styles.main}>
-                <BudgetBar className={styles.budgetBar} />
-                <AccountBar className={styles.account} />
-                <ExpensesPanel className={styles.expansesPanel} />
+                <section>
+                    <Slider />
+                </section>
+
+                <section className={styles.mainSection}>
+                    <AccountBar />
+                    <ExpensesPanel className={styles.expansesPanel} />
+                </section>
             </main>
-            <Sidebar className={styles.sidebarRight} />
-            {children}
-        </div>
+
+            {/*<Sidebar />*/}
+        </Container>
     );
 };
