@@ -28,7 +28,7 @@ export const RootPageLayout: FC = () => {
                 </section>
             </main>
 
-            <Drawer className={styles.sidebarRight}>
+            <Drawer>
                 <AuthModal />
             </Drawer>
         </Container>
