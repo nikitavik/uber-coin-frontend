@@ -1,0 +1,25 @@
+@use '@app/styles/variables' as vars;
+@use '@app/styles/utils' as utils;
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    font-size: vars.$font-small;
+}
+
+.transactionDescription {
+    display: flex;
+}
+
+.icon {
+    @include utils.set-size(1rem);
+
+    border-radius: 50%;
+    background-color: black;
+}
+
+.balanceWrapper {
+    display: flex;
+    font-size: vars.$font-regular;
+}
