@@ -18,7 +18,7 @@ export const Transaction: FC<TransactionProps> = (props) => {
     return (
         <div className={clsx(styles.transaction, className)}>
             <div className={styles.transactionDescription}>
-                <span className={styles.icon}>{icon}</span>
+                <span className={styles.iconWrapper}>{icon}</span>
                 <span className={styles.currency}>{currency}</span>
                 <span className={styles.transactionCategory}>{transactionCategory}</span>
             </div>

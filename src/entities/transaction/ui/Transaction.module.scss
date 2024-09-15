@@ -4,19 +4,24 @@
 .transaction {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: 100%;
     font-size: vars.$font-small;
 }
 
 .transactionDescription {
     display: flex;
+    align-items: center;
 }
 
-.icon {
-    @include utils.set-size(1rem);
+.iconWrapper {
+    @include utils.set-size(2rem);
 
+    background-color: var(--color-base);
     border-radius: 50%;
-    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .balanceWrapper {
