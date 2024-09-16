@@ -12,7 +12,7 @@ export const OperationsHistoryList: FC = () => {
             <div className={styles.operationsBlock}>
                 <div className={styles.operationsHeader}>
                     <span className={styles.operationsDate}>Yesterday</span>
-                    <span className={styles.balance}>1000</span>
+                    <span className={styles.balance}>1000 KGS</span>
                 </div>
                 <div className={styles.operaions}>
                     <Operation
@@ -20,25 +20,28 @@ export const OperationsHistoryList: FC = () => {
                         currency="KGS"
                         operationCategory="Food"
                         balance="1000"
+                        account="Bacai(KGS)"
                     />
                     <Operation
                         icon={<CreditCard />}
                         currency="KGS"
                         operationCategory="Food"
                         balance="1000"
+                        account="Bacai(KGS)"
                     />
                     <Operation
                         icon={<CreditCard />}
                         currency="KGS"
                         operationCategory="Food"
                         balance="1000"
+                        account="Bacai(KGS)"
                     />
                 </div>
             </div>
             <div className={styles.operationsBlock}>
                 <div className={styles.operationsHeader}>
                     <span className={styles.operationsDate}>20.03.2121</span>
-                    <span className={styles.balance}>1000</span>
+                    <span className={styles.balance}>1000 KGS</span>
                 </div>
                 <div className={styles.operaions}>
                     <Operation
@@ -46,18 +49,21 @@ export const OperationsHistoryList: FC = () => {
                         currency="KGS"
                         operationCategory="Food"
                         balance="1000"
+                        account="Bacai(KGS)"
                     />
                     <Operation
                         icon={<CreditCard />}
                         currency="KGS"
                         operationCategory="Food"
                         balance="1000"
+                        account="Bacai(KGS)"
                     />
                     <Operation
                         icon={<CreditCard />}
                         currency="KGS"
                         operationCategory="Food"
                         balance="1000"
+                        account="Bacai(KGS)"
                     />
                 </div>
             </div>

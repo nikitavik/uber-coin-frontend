@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
-    font-size: vars.$font-small;
+    font-size: vars.$font-regular;
 }
 
 .operationDescription {
@@ -21,6 +21,5 @@
 
 .balanceWrapper {
     display: flex;
-    font-size: vars.$font-regular;
     gap: 0.2rem;
 }

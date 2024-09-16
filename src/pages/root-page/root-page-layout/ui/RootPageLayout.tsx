@@ -19,7 +19,7 @@ export const RootPageLayout: FC = () => {
             </header>
 
             <main className={styles.main}>
-                <section>
+                <section className={styles.sliderSection}>
                     <Slider />
                     <OperationsHistoryList />
                 </section>
