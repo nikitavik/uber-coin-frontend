@@ -12,6 +12,7 @@
 .operationDescription {
     display: flex;
     align-items: center;
+    gap: 0.2rem;
 }
 
 .iconWrapper {
@@ -21,4 +22,5 @@
 .balanceWrapper {
     display: flex;
     font-size: vars.$font-regular;
+    gap: 0.2rem;
 }
