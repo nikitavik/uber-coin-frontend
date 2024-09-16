@@ -1,0 +1,21 @@
+.operationsHistoryList {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.operationsBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.operationsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.operaions {
+    display: flex;
+    flex-direction: column;
+}

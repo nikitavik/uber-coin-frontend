@@ -2,25 +2,25 @@ import { FC, ReactNode } from 'react';
 
 import clsx from 'clsx';
 
-import styles from './Transaction.module.scss';
+import styles from './Operation.module.scss';
 
-type TransactionProps = {
+type OperationProps = {
     className?: string;
     icon: ReactNode;
     currency: string;
-    transactionCategory: string;
+    operationCategory: string;
     balance: string;
 };
 
-export const Transaction: FC<TransactionProps> = (props) => {
-    const { className, icon, currency, transactionCategory, balance } = props;
+export const Operation: FC<OperationProps> = (props) => {
+    const { className, icon, currency, operationCategory, balance } = props;
 
     return (
-        <div className={clsx(styles.transaction, className)}>
-            <div className={styles.transactionDescription}>
+        <div className={clsx(styles.operation, className)}>
+            <div className={styles.operationDescription}>
                 <span className={styles.iconWrapper}>{icon}</span>
                 <span className={styles.currency}>{currency}</span>
-                <span className={styles.transactionCategory}>{transactionCategory}</span>
+                <span className={styles.operationCategory}>{operationCategory}</span>
             </div>
             <div className={styles.balanceWrapper}>
                 <span className={styles.balance}>{balance}</span>
