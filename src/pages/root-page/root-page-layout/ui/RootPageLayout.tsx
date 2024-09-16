@@ -7,6 +7,7 @@ import { BudgetBar } from '@widgets/budget-bar';
 import { Drawer } from '@widgets/drawer';
 import { ExpensesPanel } from '@widgets/expenses-panel';
 import { Slider } from '@widgets/slider';
+import { TransactionHistoryList } from '@widgets/transaction-history-list';
 
 import styles from './RootPageLayout.module.scss';
 
@@ -20,6 +21,7 @@ export const RootPageLayout: FC = () => {
             <main className={styles.main}>
                 <section>
                     <Slider />
+                    <TransactionHistoryList />
                 </section>
 
                 <section className={styles.mainSection}>

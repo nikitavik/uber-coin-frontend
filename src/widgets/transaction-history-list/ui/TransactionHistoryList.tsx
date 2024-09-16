@@ -1,26 +1,31 @@
-import useEmblaCarousel from 'embla-carousel-react';
 import { FC } from 'react';
 
-import { Card } from '@entities/card';
+import CreditCard from '@entities/account/assets/icons/credit-card/credit_card.svg?react';
+import { Transaction } from '@entities/transaction';
 
-import styles from './Slider.module.scss';
+import styles from './TransactionHistoryList.module.scss';
 
-export const Slider: FC = () => {
-    const [emblaRef] = useEmblaCarousel();
-
+export const TransactionHistoryList: FC = () => {
     return (
-        <div className={styles.slider} ref={emblaRef}>
-            <div className={styles.container}>
-                <div className={styles.slide}>
-                    <Card balance="25 975,30 $" outcome="25 975,30 $" income="25 975,30 $" />
-                </div>
-                <div className={styles.slide}>
-                    <Card balance="30 975,30 $" outcome="25 975,30 $" income="25 975,30 $" />
-                </div>
-                <div className={styles.slide}>
-                    <Card balance="50 975,30 $" outcome="25 975,30 $" income="25 975,30 $" />
-                </div>
-            </div>
+        <div className={styles.transactionHistoryList}>
+            <Transaction
+                icon={<CreditCard />}
+                currency="KGS"
+                transactionCategory="Food"
+                balance="1000"
+            />
+            <Transaction
+                icon={<CreditCard />}
+                currency="KGS"
+                transactionCategory="Food"
+                balance="1000"
+            />
+            <Transaction
+                icon={<CreditCard />}
+                currency="KGS"
+                transactionCategory="Food"
+                balance="1000"
+            />
         </div>
     );
 };
