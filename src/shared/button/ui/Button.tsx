@@ -7,10 +7,11 @@ import { Spinner } from '@shared/spinner';
 
 import styles from './Button.module.scss';
 
-type ButtonScheme = 'light' | 'dark';
+type ButtonScheme = 'light' | 'dark' | 'text';
 const schemeClassNameByScheme: Record<ButtonScheme, string> = {
     light: styles.light,
     dark: styles.dark,
+    text: styles.text,
 };
 
 type ButtonSize = 'small' | 'regular' | 'large';

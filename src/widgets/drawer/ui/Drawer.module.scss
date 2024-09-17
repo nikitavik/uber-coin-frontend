@@ -1,7 +1,8 @@
 @use '@app/styles/utils' as utils;
+@use '@app/styles/variables' as variables;
 
-$z-index-backdrop: 1;
-$z-index-content: 2;
+$z-index-content: variables.$z-index-drawer;
+$z-index-backdrop: $z-index-content - 1;
 $button-size: 30px;
 $drawer-width: 320px;
 
@@ -51,6 +52,7 @@ $drawer-width: 320px;
     width: $button-size;
     border-radius: 4px 0 0 4px;
     box-shadow: 0 2px 12px 2px #00000075;
+    outline: none;
 }
 
 .icon {
@@ -82,6 +84,5 @@ $drawer-width: 320px;
 }
 
 .content {
-    display: block;
     padding: 12px;
 }

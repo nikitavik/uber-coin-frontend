@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useState } from 'react';
+import { FC, KeyboardEventHandler, PropsWithChildren, useState } from 'react';
 
 import clsx from 'clsx';
 
@@ -6,12 +6,22 @@ import MenuIcon from '../assets/menu.svg?react';
 import OpenMenuIcon from '../assets/menu_open.svg?react';
 import styles from './Drawer.module.scss';
 
-export const Drawer: FC<PropsWithChildren> = () => {
+// TODO Optional: Fix tabIndex behaviour
+export const Drawer: FC<PropsWithChildren> = ({ children }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const handleEscape: KeyboardEventHandler = (event) => {
+        if (event.key === 'Escape') {
+            setIsOpen(false);
+        }
+    };
 
     return (
         <>
             <div
+                role="button"
+                tabIndex={0}
+                onKeyDown={handleEscape}
                 onClick={() => setIsOpen(false)}
                 className={clsx(styles.backdrop, isOpen && styles.isVisible)}
             />
@@ -30,10 +40,7 @@ export const Drawer: FC<PropsWithChildren> = () => {
                         )}
                     </button>
 
-                    <div className={styles.content}>Content</div>
-                    {/*<Modal open={isOpen} onClose={setIsOpen} className={styles.drawerModal} transition>*/}
-                    {/*    {children}*/}
-                    {/*</Modal>*/}
+                    <div className={styles.content}>{children}</div>
                 </div>
             </div>
         </>
