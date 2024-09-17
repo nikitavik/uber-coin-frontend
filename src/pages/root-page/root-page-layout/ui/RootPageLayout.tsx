@@ -6,6 +6,7 @@ import { AuthModal } from '@widgets/auth-modal';
 import { BudgetBar } from '@widgets/budget-bar';
 import { Drawer } from '@widgets/drawer';
 import { ExpensesPanel } from '@widgets/expenses-panel';
+import { OperationsHistoryList } from '@widgets/operations-history-list';
 import { Slider } from '@widgets/slider';
 
 import styles from './RootPageLayout.module.scss';
@@ -18,8 +19,9 @@ export const RootPageLayout: FC = () => {
             </header>
 
             <main className={styles.main}>
-                <section>
+                <section className={styles.sliderSection}>
                     <Slider />
+                    <OperationsHistoryList />
                 </section>
 
                 <section className={styles.mainSection}>
