@@ -1,16 +1,60 @@
 @use '@app/styles/utils' as utils;
 
-.button {
-    @include utils.set-size(40px);
+$z-index-backdrop: 1;
+$z-index-content: 2;
+$button-size: 30px;
+$drawer-width: 320px;
 
-    background-color: var(--color-base);
+.root {
+    @include utils.set-transition(transform, 200ms, linear);
+
+    z-index: $z-index-content;
     position: fixed;
+    top: 0;
+    bottom: 0;
     right: 0;
-    border-radius: 50%;
+    transform: translate(100%);
+    display: flex;
+
+    &.isOpen {
+        transform: translate(0);
+    }
+}
+
+.backdrop {
+    @include utils.set-transition(opacity);
+    @include utils.backdrop;
+
+    z-index: $z-index-backdrop;
+    opacity: 0;
+
+    &.isVisible {
+        opacity: 1;
+    }
+}
+
+.inner {
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    width: $drawer-width;
+    background-color: var(--background-tertiary);
+}
+
+.button {
+    flex-grow: 1;
+    position: absolute;
+    left: -$button-size;
+    background-color: var(--color-base);
+    height: 100%;
+    cursor: pointer;
+    width: $button-size;
+    border-radius: 4px 0 0 4px;
+    box-shadow: 0 2px 12px 2px #00000075;
 }
 
 .icon {
-    @include utils.set-size(1rem);
+    @include utils.set-size(24px);
 }
 
 .drawerModal {
@@ -35,4 +79,9 @@
         transform: translate(50%);
         opacity: 0;
     }
+}
+
+.content {
+    display: block;
+    padding: 12px;
 }
