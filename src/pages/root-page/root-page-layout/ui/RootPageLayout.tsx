@@ -32,6 +32,8 @@ export const RootPageLayout: FC = () => {
 
             <Drawer>
                 <AuthModal />
+
+                <div>Список настроек</div>
             </Drawer>
         </Container>
     );

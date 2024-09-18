@@ -11,6 +11,7 @@
     position: relative;
     cursor: pointer;
     padding-inline: 2rem;
+    outline: none;
 
     &.smallSize {
         font-size: var(--font-small);
@@ -68,6 +69,32 @@
         &[data-active] {
             background-color: var(--background-tertiary);
             color: var(--color-base);
+        }
+
+        &[data-disabled] {
+            background-color: var(--color-white-smoke);
+            color: var(--color-dark-grey);
+        }
+    }
+
+    &.text {
+        background: none;
+        color: var(--color-base);
+        padding: 0;
+        text-transform: uppercase;
+        height: 32px;
+
+        &[data-hover] {
+            color: var(--color-dark-charcoal);
+        }
+
+        &[data-focus] {
+            color: var(--color-base);
+            text-decoration: underline;
+        }
+
+        &[data-active] {
+            color: var(--color-dark-charcoal);
         }
 
         &[data-disabled] {

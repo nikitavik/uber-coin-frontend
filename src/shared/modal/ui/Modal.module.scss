@@ -1,7 +1,9 @@
-@use '@app/styles/utils';
+@use '@app/styles/utils' as utils;
+@use '@app/styles/variables' as variables;
 
 .root {
     position: relative;
+    z-index: variables.$z-index-modal;
 }
 
 .modal {
