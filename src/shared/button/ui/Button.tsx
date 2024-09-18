@@ -7,6 +7,7 @@ import { Spinner } from '@shared/spinner';
 
 import styles from './Button.module.scss';
 
+// TODO: Move text to variant or remove if obsolete
 type ButtonScheme = 'light' | 'dark' | 'text';
 const schemeClassNameByScheme: Record<ButtonScheme, string> = {
     light: styles.light,

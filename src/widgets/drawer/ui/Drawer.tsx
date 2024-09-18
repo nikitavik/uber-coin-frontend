@@ -6,7 +6,6 @@ import MenuIcon from '../assets/menu.svg?react';
 import OpenMenuIcon from '../assets/menu_open.svg?react';
 import styles from './Drawer.module.scss';
 
-// TODO Optional: Fix tabIndex behaviour
 export const Drawer: FC<PropsWithChildren> = ({ children }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -19,9 +18,7 @@ export const Drawer: FC<PropsWithChildren> = ({ children }) => {
     return (
         <>
             <div
-                role="button"
-                tabIndex={0}
-                onKeyDown={handleEscape}
+                role="none"
                 onClick={() => setIsOpen(false)}
                 className={clsx(styles.backdrop, isOpen && styles.isVisible)}
             />
@@ -31,6 +28,7 @@ export const Drawer: FC<PropsWithChildren> = ({ children }) => {
                     <button
                         type="button"
                         onClick={() => setIsOpen((prev) => !prev)}
+                        onKeyDown={handleEscape}
                         className={styles.button}
                     >
                         {isOpen ? (
