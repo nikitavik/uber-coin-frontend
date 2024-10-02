@@ -1,38 +1,30 @@
-import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, FC, PropsWithChildren } from 'react';
 
 import clsx from 'clsx';
 
-import { Expense } from '@entities/expense';
-import BurgerIcon from '@entities/expense/assets/burger.svg?react';
+import { Expense, ExpenseProps } from '@entities/expense';
 
 import styles from './ExpensesPanel.module.scss';
 
 type ExpensesPanelProps = {
-    children?: ReactNode;
     className?: string;
+    expenses: Array<ExpenseProps>;
 } & PropsWithChildren<ComponentPropsWithoutRef<'div'>>;
 
 export const ExpensesPanel: FC<ExpensesPanelProps> = (props) => {
-    const { children, className, ...restProps } = props;
-    const { expenseName, deposit, icon } = {
-        expenseName: 'Вкусно и точка',
-        deposit: '10 000 $',
-        icon: <BurgerIcon className={styles.icon} />,
-    };
+    const { children, className, expenses, ...restProps } = props;
 
     return (
         <div className={clsx(styles.wrapper, className)} {...restProps}>
-            {Array(10)
-                .fill(1)
-                .map((value, index) => (
-                    <Expense
-                        expenseName={expenseName}
-                        deposit={deposit}
-                        key={`key_${value + index}`}
-                    >
-                        {icon}
-                    </Expense>
-                ))}
+            {expenses.map((expense, index) => (
+                <Expense
+                    key={`expense_${index}`}
+                    expenseName={expense.expenseName}
+                    deposit={expense.deposit}
+                    consumption={expense.consumption}
+                    children={expense.children}
+                />
+            ))}
         </div>
     );
 };

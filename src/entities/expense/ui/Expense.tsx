@@ -1,29 +1,25 @@
-import { ComponentPropsWithoutRef, FC, PropsWithChildren, ReactNode } from 'react';
-
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { ComponentPropsWithoutRef, FC, PropsWithChildren } from 'react';
 
 import styles from './Expense.module.scss';
 
-type ExpenseProps = {
-    children: ReactNode;
+export type ExpenseProps = {
     expenseName: string;
+    consumption: string;
     deposit: string;
     className?: string;
 } & PropsWithChildren<ComponentPropsWithoutRef<'div'>>;
 
 export const Expense: FC<ExpenseProps> = (props) => {
-    const { children, expenseName, deposit, className, ...restProps } = props;
+    const { children, consumption, expenseName, deposit, className, ...restProps } = props;
 
     return (
         <div className={className} {...restProps}>
-            <Popover className={styles.expense}>
+            <div className={styles.expense}>
                 <span className={styles.expenseName}>{expenseName}</span>
-                <PopoverButton className={styles.icon}>{children}</PopoverButton>
+                <div className={styles.icon}>{children}</div>
+                <span className={styles.consumption}>{consumption}</span>
                 <span className={styles.deposit}>{deposit}</span>
-                <PopoverPanel transition anchor="bottom" className={styles.popoverPanel}>
-                    Info about expense
-                </PopoverPanel>
-            </Popover>
+            </div>
         </div>
     );
 };
