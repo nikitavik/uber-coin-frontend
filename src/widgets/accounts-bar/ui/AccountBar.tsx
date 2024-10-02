@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 import { Account } from '@entities/account';
 import CreditCard from '@entities/account/assets/icons/credit-card/credit_card.svg?react';
-import { Tab, TabPanel } from '@headlessui/react';
+import { Tab } from '@headlessui/react';
 import { Bar } from '@shared/bar';
 
 import styles from './AccountBar.module.scss';
@@ -35,17 +35,6 @@ export const AccountBar: FC<AccountBarProps> = (props) => {
                                 </Tab>
                             ))}
                         {children}
-                    </>
-                }
-                tabPanels={
-                    <>
-                        {Array(30)
-                            .fill({ account: '25 975,30 $' })
-                            .map((value) => (
-                                <TabPanel
-                                    className={styles.tabPanel}
-                                >{`Здесь можно проводить манипуляции со счетом ${Object.entries(value)[0]}`}</TabPanel>
-                            ))}
                     </>
                 }
             />

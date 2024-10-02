@@ -1,10 +1,8 @@
 import { FC } from 'react';
 
 import { Finance } from '@entities/finance';
-import { Tab, TabPanel } from '@headlessui/react';
+import { Tab } from '@headlessui/react';
 import { Bar } from '@shared/bar';
-
-import styles from './BudgetBar.module.scss';
 
 type BudgetBarProps = { className?: string };
 
@@ -22,13 +20,6 @@ export const BudgetBar: FC<BudgetBarProps> = ({ className }) => {
                                 <Finance financeType={value} deposit={deposits[index]} />
                             </Tab>
                         ))}
-                    </>
-                }
-                tabPanels={
-                    <>
-                        <TabPanel className={styles.tabPanel}>Content 1</TabPanel>
-                        <TabPanel className={styles.tabPanel}>Content 2</TabPanel>
-                        <TabPanel className={styles.tabPanel}>Content 3</TabPanel>
                     </>
                 }
             />

@@ -9,3 +9,8 @@ $font-xsmall: functions.to-rem(12px);
 $font-small: functions.to-rem(14px);
 $font-regular: functions.to-rem(16px);
 $font-large: functions.to-rem(18px);
+
+// z-indexes
+$z-index-base: 10;
+$z-index-drawer: 50;
+$z-index-modal: 100;

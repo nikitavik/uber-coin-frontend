@@ -11,6 +11,7 @@
     position: relative;
     cursor: pointer;
     padding-inline: 2rem;
+    outline: none;
 
     &.smallSize {
         font-size: var(--font-small);
@@ -76,6 +77,32 @@
         }
     }
 
+    &.text {
+        background: none;
+        color: var(--color-base);
+        padding: 0;
+        text-transform: uppercase;
+        height: 32px;
+
+        &[data-hover] {
+            color: var(--color-dark-charcoal);
+        }
+
+        &[data-focus] {
+            color: var(--color-base);
+            text-decoration: underline;
+        }
+
+        &[data-active] {
+            color: var(--color-dark-charcoal);
+        }
+
+        &[data-disabled] {
+            background-color: var(--color-white-smoke);
+            color: var(--color-dark-grey);
+        }
+    }
+
     &_load {
         position: relative;
     }
@@ -94,6 +121,7 @@
 
 .content {
     opacity: 1;
+    display: flex;
 
     &.isContentHidden {
         opacity: 0;

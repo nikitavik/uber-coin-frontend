@@ -4,9 +4,31 @@
     display: flex;
     width: 100%;
     grid-gap: 1.5rem;
+    align-items: center;
     flex-wrap: wrap;
+    min-height: 8rem;
 }
 
 .icon {
-    @include utils.set-size(1rem);
+    @include utils.icon-wrapper;
+
+    background-color: transparent;
+    border: 2px dashed var(--color-base);
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+        border: 2px solid var(--color-base);
+    }
+
+    & svg {
+        @include utils.set-size(1.5rem);
+
+        stroke: var(--color-base);
+        stroke-width: 5;
+    }
 }

@@ -40,3 +40,13 @@
         opacity: 0;
     }
 }
+
+@mixin icon-wrapper {
+    @include set-size(2.5rem);
+
+    background-color: var(--color-base);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
