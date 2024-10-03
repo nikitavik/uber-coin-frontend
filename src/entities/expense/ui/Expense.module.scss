@@ -26,6 +26,12 @@
     cursor: pointer;
 }
 
+.icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--background-color-base);
+}
+
 .deposit {
     color: var(--color-base);
 }
