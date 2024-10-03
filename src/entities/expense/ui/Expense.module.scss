@@ -18,28 +18,28 @@
 .icon {
     @include utils.icon-wrapper;
 
+    position: relative;
     cursor: pointer;
 }
 
+.fill {
+    @include utils.set-size(2.3rem);
+
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .icon svg {
-    width: 20px;
-    height: 20px;
+    @include utils.set-size(1.5rem);
+
+    border: none;
     fill: var(--background-color-base);
+    z-index: 100;
 }
 
 .deposit {
     color: var(--color-base);
-}
-
-.popoverPanel {
-    @include utils.set-size(5rem);
-
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 0.5rem;
-    background-color: var(--color-base);
-    color: var(--background-color-base);
 }

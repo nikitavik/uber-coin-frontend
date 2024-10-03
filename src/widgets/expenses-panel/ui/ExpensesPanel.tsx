@@ -4,6 +4,8 @@ import clsx from 'clsx';
 
 import { Expense, ExpenseProps } from '@entities/expense';
 import { expenseIcons } from '@entities/expense/assets/icons';
+import PlusIcon from '@entities/expense/assets/plus.svg?react';
+import { Button } from '@shared/button';
 
 import styles from './ExpensesPanel.module.scss';
 
@@ -23,19 +25,20 @@ export const ExpensesPanel: FC<ExpensesPanelProps> = (props) => {
 
     return (
         <div className={clsx(styles.wrapper, className)} {...restProps}>
-            <button
+            <Button
+                className={styles.icon}
+                children={<PlusIcon />}
                 onClick={() =>
                     createExpense({
                         expenseName: 'Счёт',
-                        deposit: '5000 $',
-                        consumption: 'Ежемесячно',
-                        children: <BillIcon className={styles.icons} />,
+                        deposit: 1000,
+                        consumption: 2000,
+                        currency: 'eur',
+                        children: <BillIcon className={styles.icon} />,
                     })
                 }
-                type="button"
-            >
-                +
-            </button>
+            />
+
             {expensesArr.map((expense, index) => (
                 <Expense
                     key={`expense_${index}`}
@@ -43,6 +46,7 @@ export const ExpensesPanel: FC<ExpensesPanelProps> = (props) => {
                     deposit={expense.deposit}
                     consumption={expense.consumption}
                     children={expense.children}
+                    currency={expense.currency}
                 />
             ))}
         </div>

@@ -42,7 +42,7 @@
 }
 
 @mixin icon-wrapper {
-    @include set-size(2rem);
+    @include set-size(2.5rem);
 
     background-color: var(--color-base);
     border-radius: 50%;
