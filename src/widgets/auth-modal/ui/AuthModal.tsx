@@ -14,7 +14,9 @@ export const AuthModal: FC = () => {
 
     return (
         <div className={styles.wrapper}>
-            <Button onClick={toggleOpen}>Authorization</Button>
+            <Button scheme="text" onClick={toggleOpen}>
+                Войти / Зарегистрироваться
+            </Button>
 
             <Modal open={isOpen} onClose={toggleOpen} className={styles.modal} transition>
                 <Fieldset>

@@ -20,13 +20,7 @@
 }
 
 .iconWrapper {
-    @include utils.set-size(2rem);
-
-    background-color: var(--color-base);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include utils.icon-wrapper;
 }
 
 .deposit {

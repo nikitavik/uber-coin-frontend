@@ -1,0 +1,25 @@
+@use '@app/styles/variables' as vars;
+@use '@app/styles/utils' as utils;
+
+.operation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    font-size: vars.$font-regular;
+}
+
+.operationDescription {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.iconWrapper {
+    @include utils.icon-wrapper;
+}
+
+.balanceWrapper {
+    display: flex;
+    gap: 0.2rem;
+}

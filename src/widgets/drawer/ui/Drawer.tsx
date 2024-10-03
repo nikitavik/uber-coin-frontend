@@ -1,28 +1,46 @@
-import { FC, PropsWithChildren, useState } from 'react';
+import { FC, KeyboardEventHandler, PropsWithChildren, useState } from 'react';
 
-import { Modal } from '@shared/modal';
+import clsx from 'clsx';
 
 import MenuIcon from '../assets/menu.svg?react';
 import OpenMenuIcon from '../assets/menu_open.svg?react';
 import styles from './Drawer.module.scss';
 
-export const Drawer: FC<PropsWithChildren> = (props) => {
-    const { children } = props;
+export const Drawer: FC<PropsWithChildren> = ({ children }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const handleEscape: KeyboardEventHandler = (event) => {
+        if (event.key === 'Escape') {
+            setIsOpen(false);
+        }
+    };
 
     return (
         <>
-            <button type="button" onClick={() => setIsOpen(true)} className={styles.button}>
-                {isOpen ? (
-                    <MenuIcon className={styles.icon} />
-                ) : (
-                    <OpenMenuIcon className={styles.icon} />
-                )}
-            </button>
+            <div
+                role="none"
+                onClick={() => setIsOpen(false)}
+                className={clsx(styles.backdrop, isOpen && styles.isVisible)}
+            />
 
-            <Modal open={isOpen} onClose={setIsOpen} className={styles.drawerModal} transition>
-                {children}
-            </Modal>
+            <div className={clsx(styles.root, isOpen && styles.isOpen)}>
+                <div className={styles.inner}>
+                    <button
+                        type="button"
+                        onClick={() => setIsOpen((prev) => !prev)}
+                        onKeyDown={handleEscape}
+                        className={styles.button}
+                    >
+                        {isOpen ? (
+                            <MenuIcon className={styles.icon} />
+                        ) : (
+                            <OpenMenuIcon className={styles.icon} />
+                        )}
+                    </button>
+
+                    <div className={styles.content}>{children}</div>
+                </div>
+            </div>
         </>
     );
 };

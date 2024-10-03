@@ -16,13 +16,8 @@
 }
 
 .icon {
-    @include utils.set-size(2rem);
+    @include utils.icon-wrapper;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: var(--color-base);
     cursor: pointer;
 }
 
