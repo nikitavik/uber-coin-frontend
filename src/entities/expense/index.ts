@@ -1,1 +1,2 @@
-export { Expense } from './ui/Expense';
+export * from './ui/Expense';
+export * from './assets/icons';

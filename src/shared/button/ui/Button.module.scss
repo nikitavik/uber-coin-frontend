@@ -121,6 +121,7 @@
 
 .content {
     opacity: 1;
+    display: flex;
 
     &.isContentHidden {
         opacity: 0;
